@@ -1,0 +1,2017 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     77520,       2009]
+NotebookOptionsPosition[     74670,       1953]
+NotebookOutlinePosition[     75146,       1971]
+CellTagsIndexPosition[     75103,       1968]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.863198062030037*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"773fc75f-f333-4da3-b11d-b62b6ddbf425"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cities", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"\"Miami\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Miami\"", ",", "\"Florida\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"San Diego\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"SanDiego\"", ",", "\"California\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"New York City\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"NewYork\"", ",", "\"NewYork\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", "\[IndentingNewLine]", 
+     TemplateBox[{"\"Chicago\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Chicago\"", ",", "\"Illinois\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"Seattle\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Seattle\"", ",", "\"Washington\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"Salt Lake City\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"Boston\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Boston\"", ",", "\"Massachusetts\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"Honolulu\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Honolulu\"", ",", "\"Hawaii\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", "\[IndentingNewLine]", 
+     TemplateBox[{"\"Denver\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Denver\"", ",", "\"Colorado\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"Boulder\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Boulder\"", ",", "\"Colorado\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.863198134859868*^9, 3.863198225043964*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"80e23dd2-ce19-4552-bce2-de16919684f8"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"travelprices", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "343", ",", "612", ",", "221", ",", "279", ",", "784", ",", "709", ",", 
+     "221", ",", "1129", ",", "529", ",", "529"}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8631980863493023`*^9, 3.8631981111861095`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"adadfc47-4e55-4a19-ab3e-249424c41594"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"distances", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"GeoDistance", "[", 
+     RowBox[{"Here", ",", "#"}], "]"}], "&"}], "/@", "cities"}]}]], "Input",
+ CellChangeTimes->{{3.863198112137824*^9, 3.8631981333558607`*^9}, {
+  3.863198238285578*^9, 3.8631982392180605`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"09d41ff9-7a18-408b-b1e0-df6ab8bccebe"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"917.7992886185064`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"2251.4885620927516`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"183.67033464786124`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"585.3537930014454`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"2322.4347821041424`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1837.6984489086315`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"385.14760837481737`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"4830.725019308689`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1471.2647205949477`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1500.469103492071`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.8631982488967867`*^9, 3.863262340974517*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"8f779236-558e-49ec-99f9-9427ae2bbcb1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"travelassociation", "=", 
+  RowBox[{"AssociationThread", "[", 
+   RowBox[{"cities", "->", 
+    RowBox[{"Transpose", "[", 
+     RowBox[{"{", 
+      RowBox[{"distances", ",", "travelprices"}], "}"}], "]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.863198491188828*^9, 3.86319852915417*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"b4135370-8b84-4fe4-9764-9f466902d614"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{
+    TemplateBox[{"\"Miami\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Miami\"", ",", "\"Florida\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"917.7992886185064`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "343"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"San Diego\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"SanDiego\"", ",", "\"California\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"2251.4885620927516`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "612"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"New York City\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"NewYork\"", ",", "\"NewYork\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"183.67033464786124`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "221"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Chicago\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Chicago\"", ",", "\"Illinois\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"585.3537930014454`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "279"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Seattle\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Seattle\"", ",", "\"Washington\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"2322.4347821041424`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "784"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Salt Lake City\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1837.6984489086315`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "709"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Boston\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Boston\"", ",", "\"Massachusetts\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"385.14760837481737`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "221"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Honolulu\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Honolulu\"", ",", "\"Hawaii\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"4830.725019308689`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "1129"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Denver\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Denver\"", ",", "\"Colorado\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1471.2647205949477`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "529"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Boulder\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Boulder\"", ",", "\"Colorado\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1500.469103492071`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "529"}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.863198529552664*^9, 3.8632623415715857`*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"b631710e-ae58-449e-ad2c-4b0c2fb979e6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Tooltip", "[", 
+     RowBox[{
+      RowBox[{"travelassociation", "[", "#", "]"}], ",", "#"}], "]"}], "&"}], 
+   "/@", "cities"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8631985391824493`*^9, 3.863198596634207*^9}, {
+  3.8631994899387307`*^9, 3.8631994933551188`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"7b962169-1c9e-4b72-90d8-faa085872f42"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{917.7992886185064, 343.}, {2251.4885620927516`, 612.}, {
+      183.67033464786124`, 221.}, {585.3537930014454, 279.}, {
+      2322.4347821041424`, 784.}, {1837.6984489086315`, 709.}, {
+      385.14760837481737`, 221.}, {4830.725019308689, 1129.}, {
+      1471.2647205949477`, 529.}, {1500.469103492071, 529.}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{917.7992886185064, 343.}}]},
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Miami", "Florida", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2251.4885620927516`, 612.}}]},
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SanDiego", "California", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{183.67033464786124`, 221.}}]},
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"NewYork", "NewYork", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{585.3537930014454, 279.}}]},
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Chicago", "Illinois", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2322.4347821041424`, 784.}}]},
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Seattle", "Washington", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1837.6984489086315`, 709.}}]},
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SaltLakeCity", "Utah", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{385.14760837481737`, 221.}}]},
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boston", "Massachusetts", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4830.725019308689, 1129.}}]},
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Honolulu", "Hawaii", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1471.2647205949477`, 529.}}]},
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Denver", "Colorado", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1500.469103492071, 529.}}]},
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boulder", "Colorado", "UnitedStates"}], 
+       "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 4830.725019308689}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.8631985452513933`*^9, 3.8631985970258703`*^9}, 
+   3.8631987651996174`*^9, 3.8631989247631187`*^9, {3.8631994911307955`*^9, 
+   3.8631994943348265`*^9}, 3.8631999909497705`*^9, 3.8632623422885804`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"7e35b580-e339-43b9-b3cc-d7d14935cc46"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Tooltip", "[", 
+      RowBox[{
+       RowBox[{"travelassociation", "[", "#", "]"}], ",", 
+       RowBox[{"#", "[", "\"\<Name\>\"", "]"}]}], "]"}], "&"}], "/@", 
+    "cities"}], ",", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<Geodesic Distance from Huntington West Virginia in miles to cities \
+computed with Wolfram Mathematica GeoDistance\>\"", ",", 
+      "\"\<Cost of cheapest round trip from Columbus Ohio on August 18 2022 \
+from Google Flights\>\""}], "}"}]}], ",", 
+   RowBox[{"LabelStyle", "\[Rule]", 
+    RowBox[{"Directive", "[", 
+     RowBox[{"16", ",", 
+      RowBox[{"FontFamily", "->", "\"\<JetBrains Mono\>\""}]}], "]"}]}], ",", 
+   RowBox[{"Frame", "->", "True"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
+   RowBox[{"PlotTheme", "\[Rule]", "\"\<Business\>\""}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", 
+    "\"\<Distance vs cost of flights to 10 major cities\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8632636129326935`*^9, 3.8632636679265995`*^9}, {
+  3.863263728835147*^9, 3.863263735549021*^9}, {3.8632638066859074`*^9, 
+  3.8632639774414325`*^9}, {3.8632641178467646`*^9, 3.863264218651431*^9}},
+ CellLabel->"In[53]:=",ExpressionUUID->"0144d5cf-5af6-4ef0-8d3e-efccc94dcaa6"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      917.7992886185064, 343.}}, {{2251.4885620927516`, 612.}}, {{
+      183.67033464786124`, 221.}}, {{585.3537930014454, 279.}}, {{
+      2322.4347821041424`, 784.}}, {{1837.6984489086315`, 709.}}, {{
+      385.14760837481737`, 221.}}, {{4830.725019308689, 1129.}}, {{
+      1471.2647205949477`, 529.}}, {{1500.469103492071, 529.}}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{917.7992886185064, 343.}}]},
+       "\"Miami\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Miami", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2251.4885620927516`, 612.}}]},
+       "\"San Diego\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "San Diego", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{183.67033464786124`, 221.}}]},
+       "\"New York City\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "New York City", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{585.3537930014454, 279.}}]},
+       "\"Chicago\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Chicago", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2322.4347821041424`, 784.}}]},
+       "\"Seattle\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Seattle", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1837.6984489086315`, 709.}}]},
+       "\"Salt Lake City\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Salt Lake City", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{385.14760837481737`, 221.}}]},
+       "\"Boston\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Boston", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4830.725019308689, 1129.}}]},
+       "\"Honolulu\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Honolulu", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1471.2647205949477`, 529.}}]},
+       "\"Denver\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Denver", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1500.469103492071, 529.}}]},
+       "\"Boulder\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Boulder", "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{
+     FormBox[
+     "\"Cost of cheapest round trip from Columbus Ohio on August 18 2022 from \
+Google Flights\"", TraditionalForm], None}, {
+     FormBox[
+     "\"Geodesic Distance from Huntington West Virginia in miles to cities \
+computed with Wolfram Mathematica GeoDistance\"", TraditionalForm], None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {3000., 
+        FormBox["3000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  ImageSize->Full,
+  LabelStyle->Directive[16, FontFamily -> "JetBrains Mono"],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+   "\"Distance vs cost of flights to 10 major cities\"", TraditionalForm],
+  PlotRange->{{0, 4830.725019308689}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{{3.8632636090210066`*^9, 3.863263642466757*^9}, 
+   3.863263746966285*^9, {3.8632638097293396`*^9, 3.8632639528687096`*^9}, {
+   3.8632641309055047`*^9, 3.863264219688207*^9}},
+ CellLabel->"Out[53]=",ExpressionUUID->"a8b25fc2-7337-49ef-b867-ee97153a8fc5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Block", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"cities", ",", "travelAssociation"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"cities", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", "\[IndentingNewLine]", 
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", "\"UnitedStates\""}
+                ], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", "\[IndentingNewLine]", 
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"]}], "}"}]}], ";", 
+    RowBox[{"travelAssociation", "=", 
+     RowBox[{"AssociationThread", "[", 
+      RowBox[{"cities", "->", 
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"GeoDistance", "[", 
+             RowBox[{"Here", ",", "#", ",", 
+              RowBox[{"UnitSystem", "\[Rule]", "\"\<Metric\>\""}]}], "]"}], 
+            "&"}], "/@", "cities"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "343", ",", "612", ",", "221", ",", "279", ",", "784", ",", "709", 
+            ",", "221", ",", "1129", ",", "529", ",", "529"}], "}"}]}], "}"}],
+         "]"}]}], "]"}]}], ";", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Tooltip", "[", 
+         RowBox[{
+          RowBox[{"travelAssociation", "[", "#", "]"}], ",", 
+          RowBox[{"#", "[", "\"\<Name\>\"", "]"}]}], "]"}], "&"}], "/@", 
+       "cities"}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Geodesic Distance from Huntington West Virginia in miles to \
+cities computed with Wolfram Mathematica GeoDistance\>\"", ",", 
+         "\"\<Cost of cheapest round trip from Columbus Ohio on August 18 \
+2022 from Google Flights\>\""}], "}"}]}], ",", 
+      RowBox[{"LabelStyle", "\[Rule]", 
+       RowBox[{"Directive", "[", 
+        RowBox[{"16", ",", 
+         RowBox[{"FontFamily", "->", "\"\<JetBrains Mono\>\""}]}], "]"}]}], 
+      ",", 
+      RowBox[{"Frame", "->", "True"}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
+      RowBox[{"PlotTheme", "\[Rule]", "\"\<Business\>\""}], ",", 
+      RowBox[{
+      "PlotLabel", "\[Rule]", 
+       "\"\<Distance vs cost of flights to 10 major cities\>\""}]}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8632636129326935`*^9, 3.8632636679265995`*^9}, {
+  3.863263728835147*^9, 3.863263735549021*^9}, {3.8632638066859074`*^9, 
+  3.8632639774414325`*^9}, {3.8632641178467646`*^9, 3.8632644190089245`*^9}},
+ CellLabel->"In[58]:=",ExpressionUUID->"238c3177-aa77-4483-9432-3f5403bdcab5"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      1477.0547783424618`, 343.}}, {{3623.4196084725977`, 612.}}, {{
+      295.5887510435276, 221.}}, {{942.0356146441183, 279.}}, {{
+      3737.5964819706096`, 784.}}, {{2957.488972560413, 709.}}, {{
+      619.8349926523621, 221.}}, {{7774.298325474324, 1129.}}, {{
+      2367.7710505011555`, 529.}}, {{2414.770948890344, 529.}}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1477.0547783424618`, 343.}}]},
+       "\"Miami\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Miami", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3623.4196084725977`, 612.}}]},
+       "\"San Diego\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "San Diego", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{295.5887510435276, 221.}}]},
+       "\"New York City\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "New York City", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{942.0356146441183, 279.}}]},
+       "\"Chicago\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Chicago", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3737.5964819706096`, 784.}}]},
+       "\"Seattle\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Seattle", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2957.488972560413, 709.}}]},
+       "\"Salt Lake City\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Salt Lake City", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{619.8349926523621, 221.}}]},
+       "\"Boston\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Boston", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{7774.298325474324, 1129.}}]},
+       "\"Honolulu\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Honolulu", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2367.7710505011555`, 529.}}]},
+       "\"Denver\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Denver", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2414.770948890344, 529.}}]},
+       "\"Boulder\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Boulder", "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{
+     FormBox[
+     "\"Cost of cheapest round trip from Columbus Ohio on August 18 2022 from \
+Google Flights\"", TraditionalForm], None}, {
+     FormBox[
+     "\"Geodesic Distance from Huntington West Virginia in miles to cities \
+computed with Wolfram Mathematica GeoDistance\"", TraditionalForm], None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}, {6000., 
+        FormBox["6000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  ImageSize->Full,
+  LabelStyle->Directive[16, FontFamily -> "JetBrains Mono"],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+   "\"Distance vs cost of flights to 10 major cities\"", TraditionalForm],
+  PlotRange->{{0, 7774.298325474324}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{{3.863264391832568*^9, 3.863264419853916*^9}},
+ CellLabel->"Out[58]=",ExpressionUUID->"a8d7c691-8e57-4462-b389-8c1934258699"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"travelprices", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "343", ",", "612", ",", "221", ",", "279", ",", "784", ",", "709", ",", 
+     "221", ",", "1129", ",", "529", ",", "529"}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8631980863493023`*^9, 3.8631981111861095`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"5afd618e-a929-4460-845d-25d8311ec045"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"distances", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"GeoDistance", "[", 
+     RowBox[{"Here", ",", "#"}], "]"}], "&"}], "/@", "cities"}]}]], "Input",
+ CellChangeTimes->{{3.863198112137824*^9, 3.8631981333558607`*^9}, {
+  3.863198238285578*^9, 3.8631982392180605`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"82d600af-2d90-478e-b685-d596d669ac22"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"917.7992886185064`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"2251.4885620927516`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"183.67033464786124`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"585.3537930014454`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"2322.4347821041424`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1837.6984489086315`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"385.14760837481737`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"4830.725019308689`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1471.2647205949477`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1500.469103492071`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.8631982488967867`*^9, 3.863262340974517*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"e0d9bde0-d112-4937-93ec-dc659d617004"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"travelassociation", "=", 
+  RowBox[{"AssociationThread", "[", 
+   RowBox[{"cities", "->", 
+    RowBox[{"Transpose", "[", 
+     RowBox[{"{", 
+      RowBox[{"distances", ",", "travelprices"}], "}"}], "]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.863198491188828*^9, 3.86319852915417*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"8f479943-d4e8-4a4b-aefc-a18d455df4d2"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{
+    TemplateBox[{"\"Miami\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Miami\"", ",", "\"Florida\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"917.7992886185064`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "343"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"San Diego\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"SanDiego\"", ",", "\"California\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"2251.4885620927516`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "612"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"New York City\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"NewYork\"", ",", "\"NewYork\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"183.67033464786124`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "221"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Chicago\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Chicago\"", ",", "\"Illinois\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"585.3537930014454`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "279"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Seattle\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Seattle\"", ",", "\"Washington\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"2322.4347821041424`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "784"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Salt Lake City\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1837.6984489086315`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "709"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Boston\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Boston\"", ",", "\"Massachusetts\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"385.14760837481737`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "221"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Honolulu\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Honolulu\"", ",", "\"Hawaii\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"4830.725019308689`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "1129"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Denver\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Denver\"", ",", "\"Colorado\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1471.2647205949477`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "529"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Boulder\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Boulder\"", ",", "\"Colorado\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1500.469103492071`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "529"}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.863198529552664*^9, 3.8632623415715857`*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"7f15fcc5-8cb0-42de-a0b3-9c1b8edea80c"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", 
+  RowBox[{
+  "travelprices", ",", "travelassociation", ",", "cities", ",", "distances"}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.8632643990903683`*^9, 3.8632644112375717`*^9}},
+ CellLabel->"In[56]:=",ExpressionUUID->"8eac8f67-99e8-46eb-9b7a-78711f01e52e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Block", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"cities", ",", "travelAssociation"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"cities", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", "\[IndentingNewLine]", 
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", "\"UnitedStates\""}
+                ], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", "\[IndentingNewLine]", 
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"]}], "}"}]}], ";", 
+    RowBox[{"travelAssociation", "=", 
+     RowBox[{"AssociationThread", "[", 
+      RowBox[{"cities", "->", 
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"GeoDistance", "[", 
+             RowBox[{"Here", ",", "#", ",", 
+              RowBox[{"UnitSystem", "\[Rule]", "\"\<Metric\>\""}]}], "]"}], 
+            "&"}], "/@", "cities"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "343", ",", "612", ",", "221", ",", "279", ",", "784", ",", "709", 
+            ",", "221", ",", "1129", ",", "529", ",", "529"}], "}"}]}], "}"}],
+         "]"}]}], "]"}]}], ";", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Tooltip", "[", 
+         RowBox[{
+          RowBox[{"travelAssociation", "[", "#", "]"}], ",", 
+          RowBox[{"#", "[", "\"\<Name\>\"", "]"}]}], "]"}], "&"}], "/@", 
+       "cities"}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Geodesic Distance from Huntington West Virginia in kilometres to \
+cities computed with Wolfram Mathematica GeoDistance\>\"", ",", 
+         "\"\<Cost of cheapest round trip from Columbus Ohio on August 18 \
+2022 from Google Flights\>\""}], "}"}]}], ",", 
+      RowBox[{"LabelStyle", "\[Rule]", 
+       RowBox[{"Directive", "[", 
+        RowBox[{"16", ",", 
+         RowBox[{"FontFamily", "->", "\"\<JetBrains Mono\>\""}]}], "]"}]}], 
+      ",", 
+      RowBox[{"Frame", "->", "True"}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
+      RowBox[{"PlotTheme", "\[Rule]", "\"\<Business\>\""}], ",", 
+      RowBox[{
+      "PlotLabel", "\[Rule]", 
+       "\"\<Distance vs cost of flights to 10 major cities\>\""}]}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8632644495473433`*^9, 3.863264451314685*^9}},
+ CellLabel->"In[59]:=",ExpressionUUID->"a2122816-2bab-4ea9-80c2-9ba1a5f3fdff"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      1477.0547783424618`, 343.}}, {{3623.4196084725977`, 612.}}, {{
+      295.5887510435276, 221.}}, {{942.0356146441183, 279.}}, {{
+      3737.5964819706096`, 784.}}, {{2957.488972560413, 709.}}, {{
+      619.8349926523621, 221.}}, {{7774.298325474324, 1129.}}, {{
+      2367.7710505011555`, 529.}}, {{2414.770948890344, 529.}}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1477.0547783424618`, 343.}}]},
+       "\"Miami\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Miami", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3623.4196084725977`, 612.}}]},
+       "\"San Diego\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "San Diego", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{295.5887510435276, 221.}}]},
+       "\"New York City\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "New York City", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{942.0356146441183, 279.}}]},
+       "\"Chicago\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Chicago", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3737.5964819706096`, 784.}}]},
+       "\"Seattle\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Seattle", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2957.488972560413, 709.}}]},
+       "\"Salt Lake City\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Salt Lake City", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{619.8349926523621, 221.}}]},
+       "\"Boston\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Boston", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{7774.298325474324, 1129.}}]},
+       "\"Honolulu\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Honolulu", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2367.7710505011555`, 529.}}]},
+       "\"Denver\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Denver", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2414.770948890344, 529.}}]},
+       "\"Boulder\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Boulder", "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{
+     FormBox[
+     "\"Cost of cheapest round trip from Columbus Ohio on August 18 2022 from \
+Google Flights\"", TraditionalForm], None}, {
+     FormBox[
+     "\"Geodesic Distance from Huntington West Virginia in kilometres to \
+cities computed with Wolfram Mathematica GeoDistance\"", TraditionalForm], 
+     None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}, {6000., 
+        FormBox["6000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  ImageSize->Full,
+  LabelStyle->Directive[16, FontFamily -> "JetBrains Mono"],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+   "\"Distance vs cost of flights to 10 major cities\"", TraditionalForm],
+  PlotRange->{{0, 7774.298325474324}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{3.8632644517022686`*^9},
+ CellLabel->"Out[59]=",ExpressionUUID->"05ab2a42-47d0-4086-aeb9-89b59fe8a570"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Block", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"cities", ",", "travelAssociation"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"cities", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", "\[IndentingNewLine]", 
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", "\"UnitedStates\""}
+                ], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", "\[IndentingNewLine]", 
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"]}], "}"}]}], ";", 
+    RowBox[{"travelAssociation", "=", 
+     RowBox[{"AssociationThread", "[", 
+      RowBox[{"cities", "->", 
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"GeoDistance", "[", 
+             RowBox[{"Here", ",", "#"}], "]"}], "&"}], "/@", "cities"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "343", ",", "612", ",", "221", ",", "279", ",", "784", ",", "709", 
+            ",", "221", ",", "1129", ",", "529", ",", "529"}], "}"}]}], "}"}],
+         "]"}]}], "]"}]}], ";", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Tooltip", "[", 
+         RowBox[{
+          RowBox[{"travelAssociation", "[", "#", "]"}], ",", 
+          RowBox[{"#", "[", "\"\<Name\>\"", "]"}]}], "]"}], "&"}], "/@", 
+       "cities"}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Geodesic Distance from Huntington West Virginia in miles to \
+cities computed with Wolfram Mathematica GeoDistance\>\"", ",", 
+         "\"\<Cost of cheapest round trip from Columbus Ohio on August 18 \
+2022 from Google Flights\>\""}], "}"}]}], ",", 
+      RowBox[{"LabelStyle", "\[Rule]", 
+       RowBox[{"Directive", "[", 
+        RowBox[{"16", ",", 
+         RowBox[{"FontFamily", "->", "\"\<JetBrains Mono\>\""}]}], "]"}]}], 
+      ",", 
+      RowBox[{"Frame", "->", "True"}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
+      RowBox[{"PlotTheme", "\[Rule]", "\"\<Business\>\""}], ",", 
+      RowBox[{
+      "PlotLabel", "\[Rule]", 
+       "\"\<Distance vs cost of flights to 10 major cities\>\""}]}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8632644495473433`*^9, 3.863264464503847*^9}},
+ CellLabel->"In[61]:=",ExpressionUUID->"d1379ac2-675a-465f-9c8b-2134d7c9a2e7"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      917.7992886185064, 343.}}, {{2251.4885620927516`, 612.}}, {{
+      183.67033464786124`, 221.}}, {{585.3537930014454, 279.}}, {{
+      2322.4347821041424`, 784.}}, {{1837.6984489086315`, 709.}}, {{
+      385.14760837481737`, 221.}}, {{4830.725019308689, 1129.}}, {{
+      1471.2647205949477`, 529.}}, {{1500.469103492071, 529.}}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{917.7992886185064, 343.}}]},
+       "\"Miami\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Miami", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2251.4885620927516`, 612.}}]},
+       "\"San Diego\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "San Diego", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{183.67033464786124`, 221.}}]},
+       "\"New York City\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "New York City", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{585.3537930014454, 279.}}]},
+       "\"Chicago\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Chicago", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2322.4347821041424`, 784.}}]},
+       "\"Seattle\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Seattle", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1837.6984489086315`, 709.}}]},
+       "\"Salt Lake City\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Salt Lake City", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{385.14760837481737`, 221.}}]},
+       "\"Boston\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Boston", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4830.725019308689, 1129.}}]},
+       "\"Honolulu\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Honolulu", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1471.2647205949477`, 529.}}]},
+       "\"Denver\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Denver", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1500.469103492071, 529.}}]},
+       "\"Boulder\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Boulder", "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{
+     FormBox[
+     "\"Cost of cheapest round trip from Columbus Ohio on August 18 2022 from \
+Google Flights\"", TraditionalForm], None}, {
+     FormBox[
+     "\"Geodesic Distance from Huntington West Virginia in miles to cities \
+computed with Wolfram Mathematica GeoDistance\"", TraditionalForm], None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {3000., 
+        FormBox["3000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  ImageSize->Full,
+  LabelStyle->Directive[16, FontFamily -> "JetBrains Mono"],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+   "\"Distance vs cost of flights to 10 major cities\"", TraditionalForm],
+  PlotRange->{{0, 4830.725019308689}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{{3.8632644596528025`*^9, 3.8632644649132137`*^9}},
+ CellLabel->"Out[61]=",ExpressionUUID->"445808cc-0846-4ab4-853a-16a7f1f8e517"]
+}, Open  ]]
+},
+WindowSize->{1141.2, 604.8},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+Magnification:>0.9 Inherited,
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f10909fc-adab-4156-80f3-145f93c59452"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 165, 2, 43, "Input",ExpressionUUID->"773fc75f-f333-4da3-b11d-b62b6ddbf425"],
+Cell[726, 24, 4191, 106, 95, "Input",ExpressionUUID->"80e23dd2-ce19-4552-bce2-de16919684f8"],
+Cell[4920, 132, 387, 8, 25, "Input",ExpressionUUID->"adadfc47-4e55-4a19-ab3e-249424c41594"],
+Cell[CellGroupData[{
+Cell[5332, 144, 371, 8, 25, "Input",ExpressionUUID->"09d41ff9-7a18-408b-b1e0-df6ab8bccebe"],
+Cell[5706, 154, 1143, 24, 39, "Output",ExpressionUUID->"8f779236-558e-49ec-99f9-9427ae2bbcb1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6886, 183, 396, 9, 25, "Input",ExpressionUUID->"b4135370-8b84-4fe4-9764-9f466902d614"],
+Cell[7285, 194, 5782, 155, 71, "Output",ExpressionUUID->"b631710e-ae58-449e-ad2c-4b0c2fb979e6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13104, 354, 422, 10, 25, "Input",ExpressionUUID->"7b962169-1c9e-4b72-90d8-faa085872f42"],
+Cell[13529, 366, 7841, 197, 214, "Output",ExpressionUUID->"7e35b580-e339-43b9-b3cc-d7d14935cc46"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21407, 568, 1353, 31, 77, "Input",ExpressionUUID->"0144d5cf-5af6-4ef0-8d3e-efccc94dcaa6"],
+Cell[22763, 601, 6113, 153, 763, "Output",ExpressionUUID->"a8b25fc2-7337-49ef-b867-ee97153a8fc5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28913, 759, 6595, 167, 203, "Input",ExpressionUUID->"238c3177-aa77-4483-9432-3f5403bdcab5"],
+Cell[35511, 928, 5911, 150, 763, "Output",ExpressionUUID->"a8d7c691-8e57-4462-b389-8c1934258699"]
+}, Open  ]],
+Cell[41437, 1081, 387, 8, 26, "Input",ExpressionUUID->"5afd618e-a929-4460-845d-25d8311ec045"],
+Cell[CellGroupData[{
+Cell[41849, 1093, 371, 8, 25, "Input",ExpressionUUID->"82d600af-2d90-478e-b685-d596d669ac22"],
+Cell[42223, 1103, 1143, 24, 37, "Output",ExpressionUUID->"e0d9bde0-d112-4937-93ec-dc659d617004"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43403, 1132, 396, 9, 26, "Input",ExpressionUUID->"8f479943-d4e8-4a4b-aefc-a18d455df4d2"],
+Cell[43802, 1143, 5782, 155, 70, "Output",ExpressionUUID->"7f15fcc5-8cb0-42de-a0b3-9c1b8edea80c"]
+}, Open  ]],
+Cell[49599, 1301, 299, 6, 26, "Input",ExpressionUUID->"8eac8f67-99e8-46eb-9b7a-78711f01e52e"],
+Cell[CellGroupData[{
+Cell[49923, 1311, 6446, 165, 203, "Input",ExpressionUUID->"a2122816-2bab-4ea9-80c2-9ba1a5f3fdff"],
+Cell[56372, 1478, 5900, 151, 763, "Output",ExpressionUUID->"05ab2a42-47d0-4086-aeb9-89b59fe8a570"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62309, 1634, 6355, 163, 186, "Input",ExpressionUUID->"d1379ac2-675a-465f-9c8b-2134d7c9a2e7"],
+Cell[68667, 1799, 5987, 151, 763, "Output",ExpressionUUID->"445808cc-0846-4ab4-853a-16a7f1f8e517"]
+}, Open  ]]
+}
+]
+*)
+

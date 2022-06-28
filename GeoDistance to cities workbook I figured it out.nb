@@ -1,0 +1,2922 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    133938,       2914]
+NotebookOptionsPosition[    132632,       2882]
+NotebookOutlinePosition[    133036,       2898]
+CellTagsIndexPosition[    132993,       2895]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Cost of Flights and Distances", "Title",
+ CellChangeTimes->{{3.863264501196989*^9, 
+  3.863264505771754*^9}},ExpressionUUID->"5f3795c7-d753-47ec-89ab-\
+135629f0be31"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  DynamicModuleBox[{Typeset`open = False}, 
+   TemplateBox[{"Expression", 
+     RowBox[{"Block", "[", 
+       DynamicBox[
+        FEPrivate`FrontEndResource["FEBitmaps", "IconizeEllipsis"]], "]"}], 
+     GridBox[{{
+        RowBox[{
+          TagBox["\"Byte count: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+          TagBox["5288", "IconizedItem"]}]}}, 
+      GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+      "Column", 
+      GridBoxItemSize -> {
+       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+     Dynamic[Typeset`open]},
+    "IconizedObject"]],
+  Block[{$CellContext`cities, $CellContext`travelAssociation}, \
+$CellContext`cities = {
+      Entity["City", {"Miami", "Florida", "UnitedStates"}], 
+      Entity["City", {"SanDiego", "California", "UnitedStates"}], 
+      Entity["City", {"NewYork", "NewYork", "UnitedStates"}], 
+      Entity["City", {"Chicago", "Illinois", "UnitedStates"}], 
+      Entity["City", {"Seattle", "Washington", "UnitedStates"}], 
+      Entity["City", {"SaltLakeCity", "Utah", "UnitedStates"}], 
+      Entity["City", {"Boston", "Massachusetts", "UnitedStates"}], 
+      Entity["City", {"Honolulu", "Hawaii", "UnitedStates"}], 
+      Entity["City", {"Denver", "Colorado", "UnitedStates"}], 
+      Entity[
+      "City", {"Boulder", "Colorado", 
+        "UnitedStates"}]}; $CellContext`travelAssociation = 
+    AssociationThread[$CellContext`cities -> Transpose[{
+         Map[
+         GeoDistance[
+          Here, #, UnitSystem -> "Metric"]& , $CellContext`cities], {343, 612,
+          221, 279, 784, 709, 221, 1129, 529, 529}}]]; ListPlot[
+     Map[Tooltip[
+       $CellContext`travelAssociation[#], 
+       #["Name"]]& , $CellContext`cities], 
+     FrameLabel -> {
+      "Geodesic Distance from Huntington West Virginia in kilometres to \
+cities computed with Wolfram Mathematica GeoDistance", 
+       "Cost of cheapest round trip from Columbus Ohio on August 18 2022 from \
+Google Flights"}, LabelStyle -> Directive[13, FontFamily -> "JetBrains Mono"],
+      Frame -> True, ImageSize -> Full, PlotTheme -> "Business", PlotLabel -> 
+     "Distance vs cost of flights to 10 major cities"]],
+  SelectWithContents->True,
+  Selectable->False]], "Input",
+ CellChangeTimes->{{3.8632645128605394`*^9, 3.863264582086618*^9}},
+ CellLabel->"In[65]:=",ExpressionUUID->"362e9be2-5b82-4257-ad13-64bb12357183"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      1477.0547783424618`, 343.}}, {{3623.4196084725977`, 612.}}, {{
+      295.5887510435276, 221.}}, {{942.0356146441183, 279.}}, {{
+      3737.5964819706096`, 784.}}, {{2957.488972560413, 709.}}, {{
+      619.8349926523621, 221.}}, {{7774.298325474324, 1129.}}, {{
+      2367.7710505011555`, 529.}}, {{2414.770948890344, 529.}}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1477.0547783424618`, 343.}}]},
+       "\"Miami\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Miami", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3623.4196084725977`, 612.}}]},
+       "\"San Diego\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "San Diego", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{295.5887510435276, 221.}}]},
+       "\"New York City\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "New York City", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{942.0356146441183, 279.}}]},
+       "\"Chicago\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Chicago", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3737.5964819706096`, 784.}}]},
+       "\"Seattle\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Seattle", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2957.488972560413, 709.}}]},
+       "\"Salt Lake City\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Salt Lake City", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{619.8349926523621, 221.}}]},
+       "\"Boston\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Boston", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{7774.298325474324, 1129.}}]},
+       "\"Honolulu\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Honolulu", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2367.7710505011555`, 529.}}]},
+       "\"Denver\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Denver", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2414.770948890344, 529.}}]},
+       "\"Boulder\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Boulder", "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{
+     FormBox[
+     "\"Cost of cheapest round trip from Columbus Ohio on August 18 2022 from \
+Google Flights\"", TraditionalForm], None}, {
+     FormBox[
+     "\"Geodesic Distance from Huntington West Virginia in kilometres to \
+cities computed with Wolfram Mathematica GeoDistance\"", TraditionalForm], 
+     None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}, {6000., 
+        FormBox["6000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  ImageSize->Full,
+  LabelStyle->Directive[13, FontFamily -> "JetBrains Mono"],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+   "\"Distance vs cost of flights to 10 major cities\"", TraditionalForm],
+  PlotRange->{{0, 7774.298325474324}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{{3.8632645450960026`*^9, 3.863264583666743*^9}},
+ CellLabel->"Out[65]=",ExpressionUUID->"202e2340-d814-4071-931b-c92b3ba200d0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Block", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"cities", ",", "travelAssociation"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"cities", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"]}], "}"}]}], ";", 
+    RowBox[{"travelAssociation", "=", 
+     RowBox[{"AssociationThread", "[", 
+      RowBox[{"cities", "\[Rule]", 
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"GeoDistance", "[", 
+              RowBox[{"Here", ",", "#1", ",", 
+               RowBox[{"UnitSystem", "\[Rule]", "\"\<Metric\>\""}]}], "]"}], 
+             "&"}], ")"}], "/@", "cities"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "343", ",", "612", ",", "221", ",", "279", ",", "784", ",", "709", 
+            ",", "221", ",", "1129", ",", "529", ",", "529"}], "}"}]}], "}"}],
+         "]"}]}], "]"}]}], ";", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Callout", "[", 
+          RowBox[{
+           RowBox[{"travelAssociation", "[", "#1", "]"}], ",", 
+           RowBox[{"#1", "[", "\"\<Name\>\"", "]"}]}], "]"}], "&"}], ")"}], "/@",
+        "cities"}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Geodesic Distance from Huntington West Virginia in kilometres to \
+cities computed with Wolfram Mathematica GeoDistance\>\"", ",", 
+         "\"\<Cost of cheapest round trip from Columbus Ohio on August 18 \
+2022 from Google Flights\>\""}], "}"}]}], ",", 
+      RowBox[{"LabelStyle", "\[Rule]", 
+       RowBox[{"Directive", "[", 
+        RowBox[{"13", ",", 
+         RowBox[{"FontFamily", "\[Rule]", "\"\<JetBrains Mono\>\""}]}], 
+        "]"}]}], ",", 
+      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
+      RowBox[{"PlotTheme", "\[Rule]", "\"\<Business\>\""}], ",", 
+      RowBox[{
+      "PlotLabel", "\[Rule]", 
+       "\"\<Distance vs cost of flights to 10 major cities\>\""}]}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8632645128605394`*^9, 3.863264582086618*^9}, {
+  3.863264616641101*^9, 3.863264627497446*^9}},
+ CellLabel->"In[66]:=",ExpressionUUID->"edc0bdaf-3f9a-4eb6-a86e-4f40b1e31ea6"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      1477.0547783424618`, 343.}}, {{3623.4196084725977`, 612.}}, {{
+      295.5887510435276, 221.}}, {{942.0356146441183, 279.}}, {{
+      3737.5964819706096`, 784.}}, {{2957.488972560413, 709.}}, {{
+      619.8349926523621, 221.}}, {{7774.298325474324, 1129.}}, {{
+      2367.7710505011555`, 529.}}, {{2414.770948890344, 529.}}}]}, {
+     TagBox[
+      {Opacity[0.], PointBox[{{1477.0547783424618`, 343.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$129049, {1}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{3623.4196084725977`, 612.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$129049, {2}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{295.5887510435276, 221.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$129049, {3}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{942.0356146441183, 279.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$129049, {4}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{3737.5964819706096`, 784.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$129049, {5}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{2957.488972560413, 709.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$129049, {6}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{619.8349926523621, 221.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$129049, {7}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{7774.298325474324, 1129.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$129049, {8}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{2367.7710505011555`, 529.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$129049, {9}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{2414.770948890344, 529.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$129049, {
+        10}}]& ]}}, {{{{}, {GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{7.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{7.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{69.65685424949238, 14.656854249492387`}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{69.65685424949238, -0.3431457505076132}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.656854249492383, -0.3431457505076274}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.656854249492383, 14.656854249492373`}, {
+             2455.9240410568236`, 538.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Boulder\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{39.65685424949238, 7.15685424949238}, \
+{2455.9240410568236, 538.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-7.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-7.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{-9.656854249492383, 14.656854249492385`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-9.656854249492383, -0.343145750507615}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-61.65685424949238, -0.34314575050762564`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-61.65685424949238, 14.656854249492374`}, {
+             2326.6179583346757`, 538.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Denver\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{-35.65685424949238, 7.15685424949238}, \
+{2326.6179583346757, 538.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-7.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-7.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{-9.656854249492383, 14.656854249492387`}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-9.656854249492383, -0.3431457505076132}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-77.65685424949238, -0.3431457505076274}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-77.65685424949238, 14.656854249492373`}, {
+             7733.145233307844, 1138.3720584241016`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Honolulu\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{-43.65685424949238, 7.15685424949238}, \
+{7733.145233307844, 1138.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {660.988084818842,
+              211.62794157589835`}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {660.988084818842,
+              211.62794157589835`}], 
+            Offset[{5.656854249492379, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{7.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {660.988084818842,
+              211.62794157589835`}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {660.988084818842,
+              211.62794157589835`}], 
+            Offset[{5.656854249492379, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{7.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{61.65685424949238, 0.34314575050762386`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{61.65685424949238, -14.656854249492376`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.656854249492383, -14.656854249492387`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.656854249492383, 0.3431457505076132}, {660.988084818842,
+              211.62794157589835`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Boston\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{35.65685424949238, -7.1568542494923815}, \
+{660.988084818842, 211.62794157589835}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-7.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-7.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{-9.656854249492383, 16.456854249492395`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-9.656854249492383, -1.5431457505076072`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-124.65685424949238`, -1.543145750507632}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-124.65685424949238`, 16.456854249492366`}, {
+             2916.335880393933, 718.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Salt Lake City\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{-67.15685424949238, 7.45685424949238}, \
+{2916.335880393933, 718.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{7.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{7.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{69.65685424949238, 14.656854249492387`}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{69.65685424949238, -0.3431457505076132}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.656854249492383, -0.3431457505076274}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.656854249492383, 14.656854249492373`}, {
+             3778.7495741370894`, 793.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Seattle\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{39.65685424949238, 7.15685424949238}, \
+{3778.7495741370894, 793.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{4., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{4., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{6., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{6., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{8., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{10., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{12., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{12., 0.}, {1000.2348757195441`, 279.}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{4., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{4., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{6., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{6., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{8., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{10., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{12., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{12., 0.}, {1000.2348757195441`, 279.}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{72., 9.000000000000007}, {1000.2348757195441`, 279.}], 
+            Offset[{72., -8.999999999999993}, {1000.2348757195441`, 279.}], 
+            Offset[{12.000000000000004`, -9.000000000000007}, {
+             1000.2348757195441`, 279.}], 
+            Offset[{11.999999999999996`, 8.999999999999993}, {
+             1000.2348757195441`, 279.}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Chicago\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], Offset[{42., 0.}, {1000.2348757195441, 279.}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], 
+       {Opacity[0], 
+        {RGBColor[0.34398, 0.49112, 0.89936], PointSize[
+         0.012833333333333334`], AbsoluteThickness[3], CapForm["Butt"]}, 
+        {RGBColor[0.34398, 0.49112, 0.89936], PointSize[
+         0.012833333333333334`], AbsoluteThickness[3], CapForm["Butt"], 
+         TagBox[
+          TooltipBox[PointBox[{295.5887510435276, 221.}],
+           StyleBox[
+            PaneBox[
+             FrameBox["\"New York City\"", LabelStyle -> {
+                Directive[13, FontFamily -> "JetBrains Mono"]}, Background -> 
+              None, ContentPadding -> False, LabelStyle -> {}, Frame -> True, 
+              RoundingRadius -> 4, Background -> GrayLevel[1, 0.65], 
+              FrameStyle -> None, FrameMargins -> 2, BaselinePosition -> 
+              Automatic, LabelingSize -> DirectedInfinity[1], StripOnInput -> 
+              False], FrameMargins -> 0], {
+             Directive[13, FontFamily -> "JetBrains Mono"]}, StripOnInput -> 
+            False]],
+          Annotation[#, 
+           Style[
+            Pane[
+             Framed["New York City", LabelStyle -> {
+                Directive[13, FontFamily -> "JetBrains Mono"]}, Background -> 
+              None, ContentPadding -> False, {
+              LabelStyle -> {}, Frame -> True, RoundingRadius -> 4, 
+               Background -> GrayLevel[1, 0.65], FrameStyle -> None, 
+               FrameMargins -> 2, BaselinePosition -> Automatic, LabelingSize -> 
+               DirectedInfinity[1]}], FrameMargins -> 0], {
+             Directive[13, FontFamily -> "JetBrains Mono"]}], "Tooltip"]& ]}},
+        GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{5.656854249492379, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{7.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{5.656854249492379, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{7.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{85.65685424949238, 1.5431457505076276`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{85.65685424949238, -16.456854249492373`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.656854249492383, -16.45685424949239}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.656854249492383, 1.5431457505076098`}, {
+             3664.5727006390775`, 602.6279415758984}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"San Diego\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{47.65685424949238, -7.456854249492381}, \
+{3664.5727006390775, 602.6279415758984}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{7.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{7.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{53.65685424949238, 15.256854249492385`}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{53.65685424949238, -0.7431457505076144}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, -0.7431457505076251}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, 15.256854249492374`}, {
+             1518.2078705089416`, 352.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Miami\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{31.65685424949238, 7.25685424949238}, \
+{1518.2078705089416, 352.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}]}}, {}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{
+     FormBox[
+     "\"Cost of cheapest round trip from Columbus Ohio on August 18 2022 from \
+Google Flights\"", TraditionalForm], None}, {
+     FormBox[
+     "\"Geodesic Distance from Huntington West Virginia in kilometres to \
+cities computed with Wolfram Mathematica GeoDistance\"", TraditionalForm], 
+     None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}, {6000., 
+        FormBox["6000", TraditionalForm], {0.01, 0.}}, {8000., 
+        FormBox["8000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  ImagePadding->{{All, All}, {All, All}},
+  ImageSize->Full,
+  LabelStyle->Directive[13, FontFamily -> "JetBrains Mono"],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+   "\"Distance vs cost of flights to 10 major cities\"", TraditionalForm],
+  PlotRange->{{0, 7774.298325474324}, {0, 1129.}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.08]}, {
+     Scaled[0.02], 
+     Scaled[0.05139637376029078]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{3.8632646279910016`*^9},
+ CellLabel->"Out[66]=",ExpressionUUID->"ea9b5538-ffd5-468c-8b95-fef1c4128c56"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Block", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"cities", ",", "travelAssociation"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"cities", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"]}], "}"}]}], ";", 
+    RowBox[{"travelAssociation", "=", 
+     RowBox[{"AssociationThread", "[", 
+      RowBox[{"cities", "\[Rule]", 
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"GeoDistance", "[", 
+              RowBox[{"Here", ",", "#1", ",", 
+               RowBox[{"UnitSystem", "\[Rule]", "\"\<Metric\>\""}]}], "]"}], 
+             "&"}], ")"}], "/@", "cities"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "343", ",", "612", ",", "221", ",", "279", ",", "784", ",", "709", 
+            ",", "221", ",", "1129", ",", "529", ",", "529"}], "}"}]}], "}"}],
+         "]"}]}], "]"}]}], ";", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Callout", "[", 
+          RowBox[{
+           RowBox[{"travelAssociation", "[", "#1", "]"}], ",", 
+           RowBox[{"#1", "[", "\"\<Name\>\"", "]"}], ",", 
+           RowBox[{"Appearance", "\[Rule]", "\"\<Leader\>\""}]}], "]"}], 
+         "&"}], ")"}], "/@", "cities"}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Geodesic Distance from Huntington West Virginia in kilometres to \
+cities computed with Wolfram Mathematica GeoDistance\>\"", ",", 
+         "\"\<Cost of cheapest round trip from Columbus Ohio on August 18 \
+2022 from Google Flights\>\""}], "}"}]}], ",", 
+      RowBox[{"LabelStyle", "\[Rule]", 
+       RowBox[{"Directive", "[", 
+        RowBox[{"13", ",", 
+         RowBox[{"FontFamily", "\[Rule]", "\"\<JetBrains Mono\>\""}]}], 
+        "]"}]}], ",", 
+      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
+      RowBox[{"PlotTheme", "\[Rule]", "\"\<Business\>\""}], ",", 
+      RowBox[{
+      "PlotLabel", "\[Rule]", 
+       "\"\<Distance vs cost of flights to 10 major cities\>\""}]}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8632645128605394`*^9, 3.863264582086618*^9}, {
+  3.863264616641101*^9, 3.863264627497446*^9}, {3.8632647275714493`*^9, 
+  3.863264732561355*^9}},
+ CellLabel->"In[70]:=",ExpressionUUID->"0a6893d3-752c-46e9-b284-31420d09d4a8"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      1477.0547783424618`, 343.}}, {{3623.4196084725977`, 612.}}, {{
+      295.5887510435276, 221.}}, {{942.0356146441183, 279.}}, {{
+      3737.5964819706096`, 784.}}, {{2957.488972560413, 709.}}, {{
+      619.8349926523621, 221.}}, {{7774.298325474324, 1129.}}, {{
+      2367.7710505011555`, 529.}}, {{2414.770948890344, 529.}}}]}, {
+     TagBox[
+      {Opacity[0.], PointBox[{{1477.0547783424618`, 343.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$133752, {1}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{3623.4196084725977`, 612.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$133752, {2}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{295.5887510435276, 221.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$133752, {3}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{942.0356146441183, 279.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$133752, {4}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{3737.5964819706096`, 784.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$133752, {5}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{2957.488972560413, 709.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$133752, {6}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{619.8349926523621, 221.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$133752, {7}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{7774.298325474324, 1129.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$133752, {8}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{2367.7710505011555`, 529.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$133752, {9}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{2414.770948890344, 529.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$133752, {
+        10}}]& ]}}, {{{{}, {GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          LineBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          LineBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{69.65685424949238, 14.656854249492387`}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{69.65685424949238, -0.3431457505076132}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.656854249492383, -0.3431457505076274}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.656854249492383, 14.656854249492373`}, {
+             2455.9240410568236`, 538.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Boulder\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{39.65685424949238, 7.15685424949238}, \
+{2455.9240410568236, 538.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          LineBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          LineBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{-9.656854249492383, 14.656854249492385`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-9.656854249492383, -0.343145750507615}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-61.65685424949238, -0.34314575050762564`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-61.65685424949238, 14.656854249492374`}, {
+             2326.6179583346757`, 538.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Denver\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{-35.65685424949238, 7.15685424949238}, \
+{2326.6179583346757, 538.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          LineBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          LineBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{-9.656854249492383, 14.656854249492387`}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-9.656854249492383, -0.3431457505076132}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-77.65685424949238, -0.3431457505076274}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-77.65685424949238, 14.656854249492373`}, {
+             7733.145233307844, 1138.3720584241016`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Honolulu\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{-43.65685424949238, 7.15685424949238}, \
+{7733.145233307844, 1138.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          LineBox[{
+           Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{5.656854249492379, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          LineBox[{
+           Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{5.656854249492379, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{61.65685424949238, 0.34314575050762386`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{61.65685424949238, -14.656854249492376`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.656854249492383, -14.656854249492387`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.656854249492383, 0.3431457505076132}, {660.988084818842,
+              211.62794157589835`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Boston\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{35.65685424949238, -7.1568542494923815}, \
+{660.988084818842, 211.62794157589835}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          LineBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          LineBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{-9.656854249492383, 16.456854249492395`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-9.656854249492383, -1.5431457505076072`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-124.65685424949238`, -1.543145750507632}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-124.65685424949238`, 16.456854249492366`}, {
+             2916.335880393933, 718.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Salt Lake City\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{-67.15685424949238, 7.45685424949238}, \
+{2916.335880393933, 718.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          LineBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          LineBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{69.65685424949238, 14.656854249492387`}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{69.65685424949238, -0.3431457505076132}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.656854249492383, -0.3431457505076274}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.656854249492383, 14.656854249492373`}, {
+             3778.7495741370894`, 793.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Seattle\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{39.65685424949238, 7.15685424949238}, \
+{3778.7495741370894, 793.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          LineBox[{
+           Offset[{4., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{8., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{12., 0.}, {1000.2348757195441`, 279.}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          LineBox[{
+           Offset[{4., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{8., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{12., 0.}, {1000.2348757195441`, 279.}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{72., 9.000000000000007}, {1000.2348757195441`, 279.}], 
+            Offset[{72., -8.999999999999993}, {1000.2348757195441`, 279.}], 
+            Offset[{12.000000000000004`, -9.000000000000007}, {
+             1000.2348757195441`, 279.}], 
+            Offset[{11.999999999999996`, 8.999999999999993}, {
+             1000.2348757195441`, 279.}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Chicago\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], Offset[{42., 0.}, {1000.2348757195441, 279.}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], 
+       {Opacity[0], 
+        {RGBColor[0.34398, 0.49112, 0.89936], PointSize[
+         0.012833333333333334`], AbsoluteThickness[3], CapForm["Butt"]}, 
+        {RGBColor[0.34398, 0.49112, 0.89936], PointSize[
+         0.012833333333333334`], AbsoluteThickness[3], CapForm["Butt"], 
+         TagBox[
+          TooltipBox[PointBox[{295.5887510435276, 221.}],
+           StyleBox[
+            PaneBox[
+             FrameBox["\"New York City\"", LabelStyle -> {
+                Directive[13, FontFamily -> "JetBrains Mono"]}, Background -> 
+              None, ContentPadding -> False, LabelStyle -> {}, Frame -> True, 
+              RoundingRadius -> 4, Background -> GrayLevel[1, 0.65], 
+              FrameStyle -> None, FrameMargins -> 2, BaselinePosition -> 
+              Automatic, LabelingSize -> DirectedInfinity[1], StripOnInput -> 
+              False], FrameMargins -> 0], {
+             Directive[13, FontFamily -> "JetBrains Mono"]}, StripOnInput -> 
+            False]],
+          Annotation[#, 
+           Style[
+            Pane[
+             Framed["New York City", LabelStyle -> {
+                Directive[13, FontFamily -> "JetBrains Mono"]}, Background -> 
+              None, ContentPadding -> False, {
+              LabelStyle -> {}, Frame -> True, RoundingRadius -> 4, 
+               Background -> GrayLevel[1, 0.65], FrameStyle -> None, 
+               FrameMargins -> 2, BaselinePosition -> Automatic, LabelingSize -> 
+               DirectedInfinity[1]}], FrameMargins -> 0], {
+             Directive[13, FontFamily -> "JetBrains Mono"]}], "Tooltip"]& ]}},
+        GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          LineBox[{
+           Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{5.656854249492379, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          LineBox[{
+           Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{5.656854249492379, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{85.65685424949238, 1.5431457505076276`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{85.65685424949238, -16.456854249492373`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.656854249492383, -16.45685424949239}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.656854249492383, 1.5431457505076098`}, {
+             3664.5727006390775`, 602.6279415758984}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"San Diego\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{47.65685424949238, -7.456854249492381}, \
+{3664.5727006390775, 602.6279415758984}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          LineBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          LineBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{53.65685424949238, 15.256854249492385`}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{53.65685424949238, -0.7431457505076144}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, -0.7431457505076251}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, 15.256854249492374`}, {
+             1518.2078705089416`, 352.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Miami\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{31.65685424949238, 7.25685424949238}, \
+{1518.2078705089416, 352.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}]}}, {}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{
+     FormBox[
+     "\"Cost of cheapest round trip from Columbus Ohio on August 18 2022 from \
+Google Flights\"", TraditionalForm], None}, {
+     FormBox[
+     "\"Geodesic Distance from Huntington West Virginia in kilometres to \
+cities computed with Wolfram Mathematica GeoDistance\"", TraditionalForm], 
+     None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}, {6000., 
+        FormBox["6000", TraditionalForm], {0.01, 0.}}, {8000., 
+        FormBox["8000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  ImagePadding->{{All, All}, {All, All}},
+  ImageSize->Full,
+  LabelStyle->Directive[13, FontFamily -> "JetBrains Mono"],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+   "\"Distance vs cost of flights to 10 major cities\"", TraditionalForm],
+  PlotRange->{{0, 7774.298325474324}, {0, 1129.}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.08]}, {
+     Scaled[0.02], 
+     Scaled[0.05139637376029078]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{3.8632647329857817`*^9, 3.8632649022459364`*^9},
+ CellLabel->"Out[70]=",ExpressionUUID->"39cfe06b-c332-452e-b712-efc8a28c9ba0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Block", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"cities", ",", "travelAssociation"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"cities", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"], ",", 
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+        "Entity"]}], "}"}]}], ";", 
+    RowBox[{"travelAssociation", "=", 
+     RowBox[{"AssociationThread", "[", 
+      RowBox[{"cities", "\[Rule]", 
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"GeoDistance", "[", 
+              RowBox[{"Here", ",", "#1", ",", 
+               RowBox[{"UnitSystem", "\[Rule]", "\"\<Metric\>\""}]}], "]"}], 
+             "&"}], ")"}], "/@", "cities"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "343", ",", "612", ",", "221", ",", "279", ",", "784", ",", "709", 
+            ",", "221", ",", "1129", ",", "529", ",", "529"}], "}"}]}], "}"}],
+         "]"}]}], "]"}]}], ";", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Callout", "[", 
+          RowBox[{
+           RowBox[{"travelAssociation", "[", "#1", "]"}], ",", 
+           RowBox[{"#1", "[", "\"\<Name\>\"", "]"}]}], "]"}], "&"}], ")"}], "/@",
+        "cities"}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Geodesic Distance from Huntington West Virginia in kilometres to \
+cities computed with Wolfram Mathematica GeoDistance\>\"", ",", 
+         "\"\<Cost of cheapest round trip from Columbus Ohio on August 18 \
+2022 from Google Flights\>\""}], "}"}]}], ",", 
+      RowBox[{"LabelStyle", "\[Rule]", 
+       RowBox[{"Directive", "[", 
+        RowBox[{"13", ",", 
+         RowBox[{"FontFamily", "\[Rule]", "\"\<JetBrains Mono\>\""}]}], 
+        "]"}]}], ",", 
+      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
+      RowBox[{"PlotTheme", "\[Rule]", "\"\<Business\>\""}], ",", 
+      RowBox[{
+      "PlotLabel", "\[Rule]", 
+       "\"\<Distance vs cost of flights to 10 major cities\>\""}]}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8632648880911455`*^9, 3.8632648955929832`*^9}, {
+  3.8632649456389227`*^9, 3.863264954840322*^9}},
+ CellLabel->"In[71]:=",ExpressionUUID->"657a5553-4b14-4b0b-8924-993dd00ca2b3"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      1477.0547783424618`, 343.}}, {{3623.4196084725977`, 612.}}, {{
+      295.5887510435276, 221.}}, {{942.0356146441183, 279.}}, {{
+      3737.5964819706096`, 784.}}, {{2957.488972560413, 709.}}, {{
+      619.8349926523621, 221.}}, {{7774.298325474324, 1129.}}, {{
+      2367.7710505011555`, 529.}}, {{2414.770948890344, 529.}}}]}, {
+     TagBox[
+      {Opacity[0.], PointBox[{{1477.0547783424618`, 343.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$134904, {1}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{3623.4196084725977`, 612.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$134904, {2}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{295.5887510435276, 221.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$134904, {3}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{942.0356146441183, 279.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$134904, {4}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{3737.5964819706096`, 784.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$134904, {5}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{2957.488972560413, 709.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$134904, {6}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{619.8349926523621, 221.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$134904, {7}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{7774.298325474324, 1129.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$134904, {8}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{2367.7710505011555`, 529.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$134904, {9}}]& ], 
+     TagBox[
+      {Opacity[0.], PointBox[{{2414.770948890344, 529.}}]},
+      Annotation[#, {{Callout}, Charting`Private`Tag$134904, {
+        10}}]& ]}}, {{{{}, {GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{7.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{7.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             2455.9240410568236`, 538.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{69.65685424949238, 14.656854249492387`}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{69.65685424949238, -0.3431457505076132}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.656854249492383, -0.3431457505076274}, {
+             2455.9240410568236`, 538.3720584241016}], 
+            Offset[{9.656854249492383, 14.656854249492373`}, {
+             2455.9240410568236`, 538.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Boulder\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{39.65685424949238, 7.15685424949238}, \
+{2455.9240410568236, 538.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-7.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-7.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {
+             2326.6179583346757`, 538.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{-9.656854249492383, 14.656854249492385`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-9.656854249492383, -0.343145750507615}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-61.65685424949238, -0.34314575050762564`}, {
+             2326.6179583346757`, 538.3720584241016}], 
+            Offset[{-61.65685424949238, 14.656854249492374`}, {
+             2326.6179583346757`, 538.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Denver\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{-35.65685424949238, 7.15685424949238}, \
+{2326.6179583346757, 538.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-7.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-7.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {7733.145233307844,
+              1138.3720584241016`}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{-9.656854249492383, 14.656854249492387`}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-9.656854249492383, -0.3431457505076132}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-77.65685424949238, -0.3431457505076274}, {
+             7733.145233307844, 1138.3720584241016`}], 
+            Offset[{-77.65685424949238, 14.656854249492373`}, {
+             7733.145233307844, 1138.3720584241016`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Honolulu\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{-43.65685424949238, 7.15685424949238}, \
+{7733.145233307844, 1138.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {660.988084818842,
+              211.62794157589835`}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {660.988084818842,
+              211.62794157589835`}], 
+            Offset[{5.656854249492379, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{7.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {660.988084818842,
+              211.62794157589835`}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {660.988084818842,
+              211.62794157589835`}], 
+            Offset[{5.656854249492379, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{7.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             660.988084818842, 211.62794157589835`}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{61.65685424949238, 0.34314575050762386`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{61.65685424949238, -14.656854249492376`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.656854249492383, -14.656854249492387`}, {
+             660.988084818842, 211.62794157589835`}], 
+            Offset[{9.656854249492383, 0.3431457505076132}, {660.988084818842,
+              211.62794157589835`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Boston\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{35.65685424949238, -7.1568542494923815}, \
+{660.988084818842, 211.62794157589835}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-7.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-2.82842712474619, 2.8284271247461903`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-4.242640687119285, 4.242640687119286}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-5.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-7.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}], 
+            Offset[{-9.65685424949238, 5.656854249492381}, {2916.335880393933,
+              718.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{-9.656854249492383, 16.456854249492395`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-9.656854249492383, -1.5431457505076072`}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-124.65685424949238`, -1.543145750507632}, {
+             2916.335880393933, 718.3720584241016}], 
+            Offset[{-124.65685424949238`, 16.456854249492366`}, {
+             2916.335880393933, 718.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Salt Lake City\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{-67.15685424949238, 7.45685424949238}, \
+{2916.335880393933, 718.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{7.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{7.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             3778.7495741370894`, 793.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{69.65685424949238, 14.656854249492387`}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{69.65685424949238, -0.3431457505076132}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.656854249492383, -0.3431457505076274}, {
+             3778.7495741370894`, 793.3720584241016}], 
+            Offset[{9.656854249492383, 14.656854249492373`}, {
+             3778.7495741370894`, 793.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Seattle\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{39.65685424949238, 7.15685424949238}, \
+{3778.7495741370894, 793.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{4., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{4., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{6., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{6., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{8., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{10., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{12., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{12., 0.}, {1000.2348757195441`, 279.}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{4., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{4., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{6., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{6., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{8., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{10., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{12., 0.}, {1000.2348757195441`, 279.}], 
+            Offset[{12., 0.}, {1000.2348757195441`, 279.}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{72., 9.000000000000007}, {1000.2348757195441`, 279.}], 
+            Offset[{72., -8.999999999999993}, {1000.2348757195441`, 279.}], 
+            Offset[{12.000000000000004`, -9.000000000000007}, {
+             1000.2348757195441`, 279.}], 
+            Offset[{11.999999999999996`, 8.999999999999993}, {
+             1000.2348757195441`, 279.}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Chicago\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], Offset[{42., 0.}, {1000.2348757195441, 279.}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], 
+       {Opacity[0], 
+        {RGBColor[0.34398, 0.49112, 0.89936], PointSize[
+         0.012833333333333334`], AbsoluteThickness[3], CapForm["Butt"]}, 
+        {RGBColor[0.34398, 0.49112, 0.89936], PointSize[
+         0.012833333333333334`], AbsoluteThickness[3], CapForm["Butt"], 
+         TagBox[
+          TooltipBox[PointBox[{295.5887510435276, 221.}],
+           StyleBox[
+            PaneBox[
+             FrameBox["\"New York City\"", LabelStyle -> {
+                Directive[13, FontFamily -> "JetBrains Mono"]}, Background -> 
+              None, ContentPadding -> False, LabelStyle -> {}, Frame -> True, 
+              RoundingRadius -> 4, Background -> GrayLevel[1, 0.65], 
+              FrameStyle -> None, FrameMargins -> 2, BaselinePosition -> 
+              Automatic, LabelingSize -> DirectedInfinity[1], StripOnInput -> 
+              False], FrameMargins -> 0], {
+             Directive[13, FontFamily -> "JetBrains Mono"]}, StripOnInput -> 
+            False]],
+          Annotation[#, 
+           Style[
+            Pane[
+             Framed["New York City", LabelStyle -> {
+                Directive[13, FontFamily -> "JetBrains Mono"]}, Background -> 
+              None, ContentPadding -> False, {
+              LabelStyle -> {}, Frame -> True, RoundingRadius -> 4, 
+               Background -> GrayLevel[1, 0.65], FrameStyle -> None, 
+               FrameMargins -> 2, BaselinePosition -> Automatic, LabelingSize -> 
+               DirectedInfinity[1]}], FrameMargins -> 0], {
+             Directive[13, FontFamily -> "JetBrains Mono"]}], "Tooltip"]& ]}},
+        GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{5.656854249492379, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{7.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{2.8284271247461894`, -2.8284271247461907`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{4.242640687119284, -4.242640687119286}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{5.656854249492379, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{7.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.65685424949238, -5.6568542494923815`}, {
+             3664.5727006390775`, 602.6279415758984}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{85.65685424949238, 1.5431457505076276`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{85.65685424949238, -16.456854249492373`}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.656854249492383, -16.45685424949239}, {
+             3664.5727006390775`, 602.6279415758984}], 
+            Offset[{9.656854249492383, 1.5431457505076098`}, {
+             3664.5727006390775`, 602.6279415758984}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"San Diego\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{47.65685424949238, -7.456854249492381}, \
+{3664.5727006390775, 602.6279415758984}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{7.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{2.8284271247461903`, 2.8284271247461903`}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{4.242640687119286, 4.242640687119286}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{5.656854249492381, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{7.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, 5.656854249492381}, {
+             1518.2078705089416`, 352.3720584241016}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{53.65685424949238, 15.256854249492385`}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{53.65685424949238, -0.7431457505076144}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, -0.7431457505076251}, {
+             1518.2078705089416`, 352.3720584241016}], 
+            Offset[{9.65685424949238, 15.256854249492374`}, {
+             1518.2078705089416`, 352.3720584241016}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Miami\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontFamily->"JetBrains Mono",
+           FontSize->13,
+           FontOpacity->1], 
+          Offset[{31.65685424949238, 7.25685424949238}, \
+{1518.2078705089416, 352.3720584241016}], 
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}]]}]}}, {}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{
+     FormBox[
+     "\"Cost of cheapest round trip from Columbus Ohio on August 18 2022 from \
+Google Flights\"", TraditionalForm], None}, {
+     FormBox[
+     "\"Geodesic Distance from Huntington West Virginia in kilometres to \
+cities computed with Wolfram Mathematica GeoDistance\"", TraditionalForm], 
+     None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}, {6000., 
+        FormBox["6000", TraditionalForm], {0.01, 0.}}, {8000., 
+        FormBox["8000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  ImagePadding->{{All, All}, {All, All}},
+  ImageSize->Full,
+  LabelStyle->Directive[13, FontFamily -> "JetBrains Mono"],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+   "\"Distance vs cost of flights to 10 major cities\"", TraditionalForm],
+  PlotRange->{{0, 7774.298325474324}, {0, 1129.}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.08]}, {
+     Scaled[0.02], 
+     Scaled[0.05139637376029078]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{{3.863264891005941*^9, 3.863264896250709*^9}, 
+   3.8632649576396046`*^9},
+ CellLabel->"Out[71]=",ExpressionUUID->"c330a28b-6e0f-4b76-8289-ab81a80a05a2"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1141.2, 604.8},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"5744c486-8ce5-4bdd-b6a8-40d6ac6e8f45"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 172, 3, 98, "Title",ExpressionUUID->"5f3795c7-d753-47ec-89ab-135629f0be31"],
+Cell[CellGroupData[{
+Cell[777, 29, 2399, 49, 36, "Input",ExpressionUUID->"362e9be2-5b82-4257-ad13-64bb12357183"],
+Cell[3179, 80, 5924, 151, 706, "Output",ExpressionUUID->"202e2340-d814-4071-931b-c92b3ba200d0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9140, 236, 6540, 168, 259, "Input",ExpressionUUID->"edc0bdaf-3f9a-4eb6-a86e-4f40b1e31ea6"],
+Cell[15683, 406, 37906, 763, 706, "Output",ExpressionUUID->"ea9b5538-ffd5-468c-8b95-fef1c4128c56"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53626, 1174, 6663, 170, 259, "Input",ExpressionUUID->"0a6893d3-752c-46e9-b284-31420d09d4a8"],
+Cell[60292, 1346, 27772, 593, 706, "Output",ExpressionUUID->"39cfe06b-c332-452e-b712-efc8a28c9ba0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[88101, 1944, 6544, 168, 259, "Input",ExpressionUUID->"657a5553-4b14-4b0b-8924-993dd00ca2b3"],
+Cell[94648, 2114, 37956, 764, 706, "Output",ExpressionUUID->"c330a28b-6e0f-4b76-8289-ab81a80a05a2"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

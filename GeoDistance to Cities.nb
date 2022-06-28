@@ -1,0 +1,2840 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    110317,       2832]
+NotebookOptionsPosition[    106947,       2765]
+NotebookOutlinePosition[    107455,       2784]
+CellTagsIndexPosition[    107412,       2781]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.863198062030037*^9},ExpressionUUID->"773fc75f-f333-4da3-b11d-\
+b62b6ddbf425"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cities", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"\"Miami\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Miami\"", ",", "\"Florida\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"San Diego\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"SanDiego\"", ",", "\"California\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"New York City\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"NewYork\"", ",", "\"NewYork\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", "\[IndentingNewLine]", 
+     TemplateBox[{"\"Chicago\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Chicago\"", ",", "\"Illinois\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"Seattle\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Seattle\"", ",", "\"Washington\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"Salt Lake City\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"Boston\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Boston\"", ",", "\"Massachusetts\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"Honolulu\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Honolulu\"", ",", "\"Hawaii\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", "\[IndentingNewLine]", 
+     TemplateBox[{"\"Denver\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Denver\"", ",", "\"Colorado\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"], ",", 
+     TemplateBox[{"\"Boulder\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Boulder\"", ",", "\"Colorado\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}], 
+       "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+      "Entity"]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.863198134859868*^9, 3.863198225043964*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"80e23dd2-ce19-4552-bce2-de16919684f8"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"travelprices", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "343", ",", "612", ",", "221", ",", "279", ",", "784", ",", "709", ",", 
+     "221", ",", "1129", ",", "529", ",", "529"}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8631980863493023`*^9, 3.8631981111861095`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"adadfc47-4e55-4a19-ab3e-249424c41594"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"distances", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"GeoDistance", "[", 
+     RowBox[{"Here", ",", "#"}], "]"}], "&"}], "/@", "cities"}]}]], "Input",
+ CellChangeTimes->{{3.863198112137824*^9, 3.8631981333558607`*^9}, {
+  3.863198238285578*^9, 3.8631982392180605`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"09d41ff9-7a18-408b-b1e0-df6ab8bccebe"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"875.0373899443958`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1959.62853668798`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"460.40169636530504`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"349.9409140243777`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"2086.869150416389`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1564.7037151485667`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"650.5085902710829`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"4548.954140490691`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1191.5858983364483`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1221.7996155128192`", "\"mi\"", "miles", "\"Miles\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.8631982488967867`*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"279a67a8-61a7-4ebf-a838-e21588c57e61"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"travelassociation", "=", 
+  RowBox[{"AssociationThread", "[", 
+   RowBox[{"cities", "->", 
+    RowBox[{"Transpose", "[", 
+     RowBox[{"{", 
+      RowBox[{"distances", ",", "travelprices"}], "}"}], "]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.863198491188828*^9, 3.86319852915417*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"b4135370-8b84-4fe4-9764-9f466902d614"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{
+    TemplateBox[{"\"Miami\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Miami\"", ",", "\"Florida\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"875.0373899443958`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "343"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"San Diego\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"SanDiego\"", ",", "\"California\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1959.62853668798`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "612"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"New York City\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"NewYork\"", ",", "\"NewYork\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"460.40169636530504`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "221"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Chicago\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Chicago\"", ",", "\"Illinois\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"349.9409140243777`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "279"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Seattle\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Seattle\"", ",", "\"Washington\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"2086.869150416389`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "784"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Salt Lake City\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1564.7037151485667`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "709"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Boston\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Boston\"", ",", "\"Massachusetts\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"650.5085902710829`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "221"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Honolulu\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Honolulu\"", ",", "\"Hawaii\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"4548.954140490691`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "1129"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Denver\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Denver\"", ",", "\"Colorado\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1191.5858983364483`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "529"}], "}"}]}], ",", 
+   RowBox[{
+    TemplateBox[{"\"Boulder\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            
+            RowBox[{"\"Boulder\"", ",", "\"Colorado\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
+      "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+     "Entity"], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1221.7996155128192`", "\"mi\"", "miles", "\"Miles\""},
+       "Quantity"], ",", "529"}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.863198529552664*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"c3ac3232-820c-49c1-ab7e-e70ce26910bc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Tooltip", "[", 
+     RowBox[{
+      RowBox[{"travelassociation", "[", "#", "]"}], ",", "#"}], "]"}], "&"}], 
+   "/@", "cities"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8631985391824493`*^9, 3.863198596634207*^9}, {
+  3.8631994899387307`*^9, 3.8631994933551188`*^9}},
+ CellLabel->"In[55]:=",ExpressionUUID->"7b962169-1c9e-4b72-90d8-faa085872f42"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{875.0373899443958, 343.}, {1959.62853668798, 612.}, {
+      460.40169636530504`, 221.}, {349.9409140243777, 279.}, {
+      2086.869150416389, 784.}, {1564.7037151485667`, 709.}, {
+      650.5085902710829, 221.}, {4548.954140490691, 1129.}, {
+      1191.5858983364483`, 529.}, {1221.7996155128192`, 529.}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{875.0373899443958, 343.}}]},
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Miami", "Florida", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1959.62853668798, 612.}}]},
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SanDiego", "California", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{460.40169636530504`, 221.}}]},
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"NewYork", "NewYork", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{349.9409140243777, 279.}}]},
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Chicago", "Illinois", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2086.869150416389, 784.}}]},
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Seattle", "Washington", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1564.7037151485667`, 709.}}]},
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SaltLakeCity", "Utah", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{650.5085902710829, 221.}}]},
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boston", "Massachusetts", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4548.954140490691, 1129.}}]},
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Honolulu", "Hawaii", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1191.5858983364483`, 529.}}]},
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Denver", "Colorado", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1221.7996155128192`, 529.}}]},
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boulder", "Colorado", "UnitedStates"}], 
+       "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 4548.954140490691}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.8631985452513933`*^9, 3.8631985970258703`*^9}, 
+   3.8631987651996174`*^9, 3.8631989247631187`*^9, {3.8631994911307955`*^9, 
+   3.8631994943348265`*^9}},
+ CellLabel->"Out[55]=",ExpressionUUID->"268403e3-4851-4291-9d5f-b06b04deeef5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Tooltip", "[", 
+       RowBox[{
+        RowBox[{"travelassociation", "[", "#1", "]"}], ",", "#1"}], "]"}], 
+      "&"}], ")"}], "/@", "cities"}], ",", 
+   RowBox[{"PlotTheme", "\[Rule]", "\"\<Business\>\""}]}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[56]:=",ExpressionUUID->"289f64c5-f434-4114-9ba9-af596e782031"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      875.0373899443958, 343.}}, {{1959.62853668798, 612.}}, {{
+      460.40169636530504`, 221.}}, {{349.9409140243777, 279.}}, {{
+      2086.869150416389, 784.}}, {{1564.7037151485667`, 709.}}, {{
+      650.5085902710829, 221.}}, {{4548.954140490691, 1129.}}, {{
+      1191.5858983364483`, 529.}}, {{1221.7996155128192`, 529.}}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{875.0373899443958, 343.}}]},
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Miami", "Florida", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1959.62853668798, 612.}}]},
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SanDiego", "California", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{460.40169636530504`, 221.}}]},
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"NewYork", "NewYork", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{349.9409140243777, 279.}}]},
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Chicago", "Illinois", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2086.869150416389, 784.}}]},
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Seattle", "Washington", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1564.7037151485667`, 709.}}]},
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SaltLakeCity", "Utah", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{650.5085902710829, 221.}}]},
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boston", "Massachusetts", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4548.954140490691, 1129.}}]},
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Honolulu", "Hawaii", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1191.5858983364483`, 529.}}]},
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Denver", "Colorado", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1221.7996155128192`, 529.}}]},
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boulder", "Colorado", "UnitedStates"}], 
+       "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {3000., 
+        FormBox["3000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 4548.954140490691}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{3.8631995018268394`*^9},
+ CellLabel->"Out[56]=",ExpressionUUID->"355d24bb-aaba-4e94-b9e5-0000cfd25352"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"%56", ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[57]:=",ExpressionUUID->"16ccb303-1d9b-491f-9bdc-0a8963053375"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      875.0373899443958, 343.}}, {{1959.62853668798, 612.}}, {{
+      460.40169636530504`, 221.}}, {{349.9409140243777, 279.}}, {{
+      2086.869150416389, 784.}}, {{1564.7037151485667`, 709.}}, {{
+      650.5085902710829, 221.}}, {{4548.954140490691, 1129.}}, {{
+      1191.5858983364483`, 529.}}, {{1221.7996155128192`, 529.}}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{875.0373899443958, 343.}}]},
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Miami", "Florida", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1959.62853668798, 612.}}]},
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SanDiego", "California", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{460.40169636530504`, 221.}}]},
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"NewYork", "NewYork", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{349.9409140243777, 279.}}]},
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Chicago", "Illinois", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2086.869150416389, 784.}}]},
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Seattle", "Washington", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1564.7037151485667`, 709.}}]},
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SaltLakeCity", "Utah", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{650.5085902710829, 221.}}]},
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boston", "Massachusetts", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4548.954140490691, 1129.}}]},
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Honolulu", "Hawaii", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1191.5858983364483`, 529.}}]},
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Denver", "Colorado", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1221.7996155128192`, 529.}}]},
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boulder", "Colorado", "UnitedStates"}], 
+       "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {3000., 
+        FormBox["3000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 4548.954140490691}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{3.8631995166581345`*^9},
+ CellLabel->"Out[57]=",ExpressionUUID->"9078ee48-f016-48ba-9d3e-0f879c753cd7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"%55", ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"HoldForm", "[", 
+       RowBox[{"Distance", " ", "in", " ", "miles"}], "]"}], ",", 
+      RowBox[{"HoldForm", "[", 
+       RowBox[{"Cost", " ", "of", " ", "flight", " ", "in", " ", 
+        RowBox[{"U", ".", "S", ".", "Dollars"}], " ", "USD", " ", "$"}], 
+       "]"}]}], "}"}]}], ",", 
+   RowBox[{"LabelStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"FontFamily", "\[Rule]", "\"\<Arial\>\""}], ",", 
+      RowBox[{"GrayLevel", "[", "0", "]"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8631995481147995`*^9, 3.863199555839346*^9}},
+ NumberMarks->False,
+ CellLabel->"",ExpressionUUID->"a2585815-76da-43dd-80c4-6a9ce1d9bd3e"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      875.0373899443958, 343.}}, {{1959.62853668798, 612.}}, {{
+      460.40169636530504`, 221.}}, {{349.9409140243777, 279.}}, {{
+      2086.869150416389, 784.}}, {{1564.7037151485667`, 709.}}, {{
+      650.5085902710829, 221.}}, {{4548.954140490691, 1129.}}, {{
+      1191.5858983364483`, 529.}}, {{1221.7996155128192`, 529.}}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{875.0373899443958, 343.}}]},
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Miami", "Florida", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1959.62853668798, 612.}}]},
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SanDiego", "California", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{460.40169636530504`, 221.}}]},
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"NewYork", "NewYork", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{349.9409140243777, 279.}}]},
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Chicago", "Illinois", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2086.869150416389, 784.}}]},
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Seattle", "Washington", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1564.7037151485667`, 709.}}]},
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SaltLakeCity", "Utah", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{650.5085902710829, 221.}}]},
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boston", "Massachusetts", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4548.954140490691, 1129.}}]},
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Honolulu", "Hawaii", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1191.5858983364483`, 529.}}]},
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Denver", "Colorado", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1221.7996155128192`, 529.}}]},
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boulder", "Colorado", "UnitedStates"}], 
+       "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     TagBox[
+      RowBox[{"Distance", " ", "in", " ", "miles"}], HoldForm], 
+     TraditionalForm], 
+    FormBox[
+     TagBox[
+      RowBox[{"Cost", " ", "of", " ", "flight", " ", "in", " ", 
+        RowBox[{"U", ".", "S", ".", "Dollars"}], " ", "USD", " ", "$"}], 
+      HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {3000., 
+        FormBox["3000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  ImageSize->{477.7499999999984, Automatic},
+  LabelStyle->{FontFamily -> "Arial", 
+    GrayLevel[0]},
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 4548.954140490691}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{{3.8631995405209913`*^9, 3.863199548782997*^9}},
+ CellLabel->"Out[59]=",ExpressionUUID->"d2122401-930d-4a0c-a22b-b212c5777262"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Tooltip", "[", 
+     RowBox[{
+      RowBox[{"travelassociation", "[", "#", "]"}], ",", "#"}], "]"}], "&"}], 
+   "/@", "cities"}], "]"}]], "Input",
+ CellLabel->"In[61]:=",ExpressionUUID->"35492426-bbbd-44b2-9005-b5497b49c781"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{875.0373899443958, 343.}, {1959.62853668798, 612.}, {
+      460.40169636530504`, 221.}, {349.9409140243777, 279.}, {
+      2086.869150416389, 784.}, {1564.7037151485667`, 709.}, {
+      650.5085902710829, 221.}, {4548.954140490691, 1129.}, {
+      1191.5858983364483`, 529.}, {1221.7996155128192`, 529.}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{875.0373899443958, 343.}}]},
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Miami", "Florida", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1959.62853668798, 612.}}]},
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SanDiego", "California", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{460.40169636530504`, 221.}}]},
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"NewYork", "NewYork", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{349.9409140243777, 279.}}]},
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Chicago", "Illinois", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2086.869150416389, 784.}}]},
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Seattle", "Washington", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1564.7037151485667`, 709.}}]},
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SaltLakeCity", "Utah", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{650.5085902710829, 221.}}]},
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boston", "Massachusetts", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4548.954140490691, 1129.}}]},
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Honolulu", "Hawaii", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1191.5858983364483`, 529.}}]},
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Denver", "Colorado", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1221.7996155128192`, 529.}}]},
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boulder", "Colorado", "UnitedStates"}], 
+       "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 4548.954140490691}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.863199591636142*^9},
+ CellLabel->"Out[61]=",ExpressionUUID->"0dd9c133-3357-40ec-997e-80b5163def05"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Tooltip", "[", 
+       RowBox[{
+        RowBox[{"travelassociation", "[", "#1", "]"}], ",", "#1"}], "]"}], 
+      "&"}], ")"}], "/@", "cities"}], ",", 
+   RowBox[{"PlotTheme", "\[Rule]", "\"\<Business\>\""}]}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[62]:=",ExpressionUUID->"53051bc2-f8d2-4919-b898-90f702bf8f13"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      875.0373899443958, 343.}}, {{1959.62853668798, 612.}}, {{
+      460.40169636530504`, 221.}}, {{349.9409140243777, 279.}}, {{
+      2086.869150416389, 784.}}, {{1564.7037151485667`, 709.}}, {{
+      650.5085902710829, 221.}}, {{4548.954140490691, 1129.}}, {{
+      1191.5858983364483`, 529.}}, {{1221.7996155128192`, 529.}}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{875.0373899443958, 343.}}]},
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Miami", "Florida", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1959.62853668798, 612.}}]},
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SanDiego", "California", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{460.40169636530504`, 221.}}]},
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"NewYork", "NewYork", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{349.9409140243777, 279.}}]},
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Chicago", "Illinois", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2086.869150416389, 784.}}]},
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Seattle", "Washington", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1564.7037151485667`, 709.}}]},
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SaltLakeCity", "Utah", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{650.5085902710829, 221.}}]},
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boston", "Massachusetts", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4548.954140490691, 1129.}}]},
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Honolulu", "Hawaii", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1191.5858983364483`, 529.}}]},
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Denver", "Colorado", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1221.7996155128192`, 529.}}]},
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boulder", "Colorado", "UnitedStates"}], 
+       "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {3000., 
+        FormBox["3000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 4548.954140490691}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{3.8631995981787014`*^9},
+ CellLabel->"Out[62]=",ExpressionUUID->"ff8f0ec0-b2a1-413f-b8d3-391c5eb48d78"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"%62", ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}]}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[63]:=",ExpressionUUID->"f35c8276-4cf5-4564-af37-0ea8e1e8c727"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      875.0373899443958, 343.}}, {{1959.62853668798, 612.}}, {{
+      460.40169636530504`, 221.}}, {{349.9409140243777, 279.}}, {{
+      2086.869150416389, 784.}}, {{1564.7037151485667`, 709.}}, {{
+      650.5085902710829, 221.}}, {{4548.954140490691, 1129.}}, {{
+      1191.5858983364483`, 529.}}, {{1221.7996155128192`, 529.}}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{875.0373899443958, 343.}}]},
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Miami", "Florida", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1959.62853668798, 612.}}]},
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SanDiego", "California", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{460.40169636530504`, 221.}}]},
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"NewYork", "NewYork", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{349.9409140243777, 279.}}]},
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Chicago", "Illinois", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2086.869150416389, 784.}}]},
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Seattle", "Washington", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1564.7037151485667`, 709.}}]},
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SaltLakeCity", "Utah", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{650.5085902710829, 221.}}]},
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boston", "Massachusetts", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4548.954140490691, 1129.}}]},
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Honolulu", "Hawaii", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1191.5858983364483`, 529.}}]},
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Denver", "Colorado", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1221.7996155128192`, 529.}}]},
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boulder", "Colorado", "UnitedStates"}], 
+       "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {3000., 
+        FormBox["3000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 4548.954140490691}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{3.863199605451507*^9},
+ CellLabel->"Out[63]=",ExpressionUUID->"6901fd04-ba6a-4c5a-b004-4e4c0fd86278"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"%63", ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"HoldForm", "[", 
+       RowBox[{"distance", " ", "in", " ", "miles"}], "]"}], ",", 
+      RowBox[{"HoldForm", "[", "USD", "]"}]}], "}"}]}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", "None"}], ",", 
+   RowBox[{"LabelStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"GrayLevel", "[", "0", "]"}], "}"}]}]}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[64]:=",ExpressionUUID->"a0d4f33c-9d45-44e3-bd91-fe70e056088a"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.34398, 0.49112, 0.89936], PointSize[0.012833333333333334`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     GeometricTransformationBox[InsetBox[
+       FormBox[
+        StyleBox[
+         GraphicsBox[{
+           {GrayLevel[1], DiskBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}, 
+           {AbsoluteThickness[1.5], Dashing[{}], 
+            CircleBox[{0, 0}, Offset[{3., 3.}, {0., 0.}]]}}],
+         StripOnInput->False,
+         GraphicsBoxOptions->{DefaultBaseStyle->Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.34398, 0.49112, 0.89936], 
+           CapForm["Butt"], 
+           AbsoluteThickness[3]]}],
+        TraditionalForm], {0., 0.}, Automatic, Scaled[9.75]], {{{
+      875.0373899443958, 343.}}, {{1959.62853668798, 612.}}, {{
+      460.40169636530504`, 221.}}, {{349.9409140243777, 279.}}, {{
+      2086.869150416389, 784.}}, {{1564.7037151485667`, 709.}}, {{
+      650.5085902710829, 221.}}, {{4548.954140490691, 1129.}}, {{
+      1191.5858983364483`, 529.}}, {{1221.7996155128192`, 529.}}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{875.0373899443958, 343.}}]},
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Miami", "Florida", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1959.62853668798, 612.}}]},
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SanDiego", "California", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{460.40169636530504`, 221.}}]},
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"NewYork", "NewYork", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{349.9409140243777, 279.}}]},
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Chicago", "Illinois", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2086.869150416389, 784.}}]},
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Seattle", "Washington", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1564.7037151485667`, 709.}}]},
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SaltLakeCity", "Utah", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{650.5085902710829, 221.}}]},
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boston", "Massachusetts", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4548.954140490691, 1129.}}]},
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Honolulu", "Hawaii", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1191.5858983364483`, 529.}}]},
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Denver", "Colorado", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1221.7996155128192`, 529.}}]},
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boulder", "Colorado", "UnitedStates"}], 
+       "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     TagBox[
+      RowBox[{"distance", " ", "in", " ", "miles"}], HoldForm], 
+     TraditionalForm], 
+    FormBox[
+     TagBox["USD", HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameStyle->{{
+     StrokeForm[
+      Opacity[0]], 
+     StrokeForm[
+      Opacity[0]]}, {Automatic, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {250., 
+        FormBox["250", TraditionalForm], {0.01, 0.}}, {500., 
+        FormBox["500", TraditionalForm], {0.01, 0.}}, {750., 
+        FormBox["750", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}}, {1000., 
+        FormBox["1000", TraditionalForm], {0.01, 0.}}, {2000., 
+        FormBox["2000", TraditionalForm], {0.01, 0.}}, {3000., 
+        FormBox["3000", TraditionalForm], {0.01, 0.}}, {4000., 
+        FormBox["4000", TraditionalForm], {0.01, 0.}}}, None}}],
+  GridLines->{None, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.4, 0.5], 
+    AbsoluteThickness[1], 
+    AbsoluteDashing[{1, 2}]],
+  LabelStyle->{
+    GrayLevel[0]},
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotLabel->None,
+  PlotRange->{{0, 4548.954140490691}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& , 
+    Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}, RotateLabel -> 0]& }]], "Output",
+ CellChangeTimes->{3.8631996203691216`*^9},
+ CellLabel->"Out[64]=",ExpressionUUID->"fc79f2a1-f66b-4998-93d0-0b0e725980c6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Tooltip", "[", 
+     RowBox[{
+      RowBox[{"travelassociation", "[", "#", "]"}], ",", "#"}], "]"}], "&"}], 
+   "/@", "cities"}], "]"}]], "Input",
+ CellLabel->"In[65]:=",ExpressionUUID->"a79856f5-b230-4e01-a45c-09372c85a816"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{875.0373899443958, 343.}, {1959.62853668798, 612.}, {
+      460.40169636530504`, 221.}, {349.9409140243777, 279.}, {
+      2086.869150416389, 784.}, {1564.7037151485667`, 709.}, {
+      650.5085902710829, 221.}, {4548.954140490691, 1129.}, {
+      1191.5858983364483`, 529.}, {1221.7996155128192`, 529.}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{875.0373899443958, 343.}}]},
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Miami", "Florida", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1959.62853668798, 612.}}]},
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SanDiego", "California", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{460.40169636530504`, 221.}}]},
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"NewYork", "NewYork", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{349.9409140243777, 279.}}]},
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Chicago", "Illinois", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2086.869150416389, 784.}}]},
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Seattle", "Washington", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1564.7037151485667`, 709.}}]},
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SaltLakeCity", "Utah", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{650.5085902710829, 221.}}]},
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boston", "Massachusetts", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4548.954140490691, 1129.}}]},
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Honolulu", "Hawaii", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1191.5858983364483`, 529.}}]},
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Denver", "Colorado", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1221.7996155128192`, 529.}}]},
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boulder", "Colorado", "UnitedStates"}], 
+       "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 4548.954140490691}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.8631996361712494`*^9},
+ CellLabel->"Out[65]=",ExpressionUUID->"4e580cbe-81b4-4430-b91b-51652d9c30b4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"%65", ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"HoldForm", "[", 
+       RowBox[{"Distance", " ", "in", " ", "miles"}], "]"}], ",", 
+      RowBox[{"HoldForm", "[", 
+       RowBox[{"Flight", " ", "cost"}], "]"}]}], "}"}]}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", 
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"Flights", " ", "and", " ", "distances"}], "]"}]}], ",", 
+   RowBox[{"LabelStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"GrayLevel", "[", "0", "]"}], "}"}]}]}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[66]:=",ExpressionUUID->"c2abcf80-20f6-4e05-8d96-f8a77d00024c"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{875.0373899443958, 343.}, {1959.62853668798, 612.}, {
+      460.40169636530504`, 221.}, {349.9409140243777, 279.}, {
+      2086.869150416389, 784.}, {1564.7037151485667`, 709.}, {
+      650.5085902710829, 221.}, {4548.954140490691, 1129.}, {
+      1191.5858983364483`, 529.}, {1221.7996155128192`, 529.}}]}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{875.0373899443958, 343.}}]},
+       TemplateBox[{"\"Miami\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Miami\"", ",", "\"Florida\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Miami\\\", \\\"Florida\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Miami", "Florida", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1959.62853668798, 612.}}]},
+       TemplateBox[{"\"San Diego\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SanDiego\"", ",", "\"California\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SanDiego\\\", \\\"California\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SanDiego", "California", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{460.40169636530504`, 221.}}]},
+       TemplateBox[{"\"New York City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"NewYork\"", ",", "\"NewYork\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"NewYork", "NewYork", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{349.9409140243777, 279.}}]},
+       TemplateBox[{"\"Chicago\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Chicago\"", ",", "\"Illinois\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Chicago\\\", \\\"Illinois\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Chicago", "Illinois", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2086.869150416389, 784.}}]},
+       TemplateBox[{"\"Seattle\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Seattle\"", ",", "\"Washington\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Seattle\\\", \\\"Washington\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Seattle", "Washington", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1564.7037151485667`, 709.}}]},
+       TemplateBox[{"\"Salt Lake City\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"SaltLakeCity\"", ",", "\"Utah\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"SaltLakeCity\\\", \\\"Utah\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"SaltLakeCity", "Utah", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{650.5085902710829, 221.}}]},
+       TemplateBox[{"\"Boston\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boston\"", ",", "\"Massachusetts\"", ",", 
+                 "\"UnitedStates\""}], "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boston\\\", \\\"Massachusetts\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boston", "Massachusetts", "UnitedStates"}], 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4548.954140490691, 1129.}}]},
+       TemplateBox[{"\"Honolulu\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Honolulu\"", ",", "\"Hawaii\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Honolulu\\\", \\\"Hawaii\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Honolulu", "Hawaii", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1191.5858983364483`, 529.}}]},
+       TemplateBox[{"\"Denver\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Denver\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}], 
+               "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Denver\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Denver", "Colorado", "UnitedStates"}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1221.7996155128192`, 529.}}]},
+       TemplateBox[{"\"Boulder\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"City\"", ",", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "\"Boulder\"", ",", "\"Colorado\"", ",", "\"UnitedStates\""}],
+                "}"}]}], "]"}], 
+         "\"Entity[\\\"City\\\", {\\\"Boulder\\\", \\\"Colorado\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""}, "Entity"]],
+      Annotation[#, 
+       Entity["City", {"Boulder", "Colorado", "UnitedStates"}], 
+       "Tooltip"]& ]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox[
+      RowBox[{"Distance", " ", "in", " ", "miles"}], HoldForm], 
+     TraditionalForm], 
+    FormBox[
+     TagBox[
+      RowBox[{"Flight", " ", "cost"}], HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  LabelStyle->{
+    GrayLevel[0]},
+  Method->{
+   "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Flights", " ", "and", " ", "distances"}], HoldForm], 
+    TraditionalForm],
+  PlotRange->{{0, 4548.954140490691}, {0, 1129.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.8631996801215487`*^9},
+ CellLabel->"Out[66]=",ExpressionUUID->"a550536d-4920-43c2-b7df-8d1caa1b5cf4"]
+}, Open  ]]
+},
+WindowSize->{1152., 615.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+Magnification:>0.8 Inherited,
+FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (May 30, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"069235ad-5dee-4135-985b-efb8fae4b0bb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 147, 3, 38, "Input",ExpressionUUID->"773fc75f-f333-4da3-b11d-b62b6ddbf425"],
+Cell[708, 25, 4191, 106, 84, "Input",ExpressionUUID->"80e23dd2-ce19-4552-bce2-de16919684f8"],
+Cell[4902, 133, 387, 8, 22, "Input",ExpressionUUID->"adadfc47-4e55-4a19-ab3e-249424c41594"],
+Cell[CellGroupData[{
+Cell[5314, 145, 371, 8, 22, "Input",ExpressionUUID->"09d41ff9-7a18-408b-b1e0-df6ab8bccebe"],
+Cell[5688, 155, 1118, 24, 34, "Output",ExpressionUUID->"279a67a8-61a7-4ebf-a838-e21588c57e61"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6843, 184, 397, 9, 22, "Input",ExpressionUUID->"b4135370-8b84-4fe4-9764-9f466902d614"],
+Cell[7243, 195, 5756, 155, 63, "Output",ExpressionUUID->"c3ac3232-820c-49c1-ab7e-e70ce26910bc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13036, 355, 423, 10, 22, "Input",ExpressionUUID->"7b962169-1c9e-4b72-90d8-faa085872f42"],
+Cell[13462, 367, 7784, 197, 190, "Output",ExpressionUUID->"268403e3-4851-4291-9d5f-b06b04deeef5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21283, 569, 438, 12, 22, "Input",ExpressionUUID->"289f64c5-f434-4114-9ba9-af596e782031"],
+Cell[21724, 583, 9574, 236, 190, "Output",ExpressionUUID->"355d24bb-aaba-4e94-b9e5-0000cfd25352"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31335, 824, 218, 5, 22, "Input",ExpressionUUID->"16ccb303-1d9b-491f-9bdc-0a8963053375"],
+Cell[31556, 831, 9564, 236, 190, "Output",ExpressionUUID->"9078ee48-f016-48ba-9d3e-0f879c753cd7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41157, 1072, 796, 19, 22, "Input",ExpressionUUID->"a2585815-76da-43dd-80c4-6a9ce1d9bd3e"],
+Cell[41956, 1093, 9995, 248, 248, "Output",ExpressionUUID->"d2122401-930d-4a0c-a22b-b212c5777262"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51988, 1346, 302, 8, 22, "Input",ExpressionUUID->"35492426-bbbd-44b2-9005-b5497b49c781"],
+Cell[52293, 1356, 7650, 195, 190, "Output",ExpressionUUID->"0dd9c133-3357-40ec-997e-80b5163def05"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59980, 1556, 438, 12, 22, "Input",ExpressionUUID->"53051bc2-f8d2-4919-b898-90f702bf8f13"],
+Cell[60421, 1570, 9574, 236, 190, "Output",ExpressionUUID->"ff8f0ec0-b2a1-413f-b8d3-391c5eb48d78"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70032, 1811, 218, 5, 22, "Input",ExpressionUUID->"f35c8276-4cf5-4564-af37-0ea8e1e8c727"],
+Cell[70253, 1818, 9562, 236, 190, "Output",ExpressionUUID->"6901fd04-ba6a-4c5a-b004-4e4c0fd86278"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[79852, 2059, 565, 14, 22, "Input",ExpressionUUID->"a0d4f33c-9d45-44e3-bd91-fe70e056088a"],
+Cell[80420, 2075, 9783, 245, 190, "Output",ExpressionUUID->"fc79f2a1-f66b-4998-93d0-0b0e725980c6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[90240, 2325, 302, 8, 22, "Input",ExpressionUUID->"a79856f5-b230-4e01-a45c-09372c85a816"],
+Cell[90545, 2335, 7652, 195, 190, "Output",ExpressionUUID->"4e580cbe-81b4-4430-b91b-51652d9c30b4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[98234, 2535, 685, 17, 22, "Input",ExpressionUUID->"c2abcf80-20f6-4e05-8d96-f8a77d00024c"],
+Cell[98922, 2554, 8009, 208, 175, "Output",ExpressionUUID->"a550536d-4920-43c2-b7df-8d1caa1b5cf4"]
+}, Open  ]]
+}
+]
+*)
+
