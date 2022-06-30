@@ -1,0 +1,49 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      1081,         39]
+NotebookOptionsPosition[       725,         25]
+NotebookOutlinePosition[      1133,         41]
+CellTagsIndexPosition[      1090,         38]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["8.2 Hmwk - Testing the Mean mu (Homework)", "Title",
+ CellChangeTimes->{
+  3.865594158681601*^9},ExpressionUUID->"df67da07-df97-42ba-8731-\
+f1518489625a"]
+},
+WindowSize->{569.25, 609.75},
+WindowMargins->{{429, Automatic}, {93, Automatic}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"10b23c9c-1ebb-4c3e-b60d-a95fb503e148"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 20, 160, 3, 160, "Title",ExpressionUUID->"df67da07-df97-42ba-8731-f1518489625a"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
