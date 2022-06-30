@@ -1,0 +1,49 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      1102,         39]
+NotebookOptionsPosition[       741,         25]
+NotebookOutlinePosition[      1154,         41]
+CellTagsIndexPosition[      1111,         38]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["8.1 Hmwk - Introduction to Statistical Tests (Homework)", "Title",
+ CellChangeTimes->{
+  3.8655925016646366`*^9},ExpressionUUID->"0c81b59e-bc24-4f15-9290-\
+f65e26c5f4a6"]
+},
+WindowSize->{569.25, 624.75},
+WindowMargins->{{Automatic, 95.25}, {93.75, Automatic}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d70ca050-ccd6-45ed-ac39-81c99f433072"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 20, 176, 3, 222, "Title",ExpressionUUID->"0c81b59e-bc24-4f15-9290-f65e26c5f4a6"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
