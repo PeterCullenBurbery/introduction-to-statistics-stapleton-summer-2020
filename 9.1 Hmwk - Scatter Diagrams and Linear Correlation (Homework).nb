@@ -1,0 +1,51 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      1104,         41]
+NotebookOptionsPosition[       753,         27]
+NotebookOutlinePosition[      1157,         43]
+CellTagsIndexPosition[      1114,         40]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+9.1 Hmwk - Scatter Diagrams and Linear Correlation (Homework)\
+\>", "Title",
+ CellChangeTimes->{
+  3.865601619033064*^9},ExpressionUUID->"7a28cb70-26a4-483d-8b1e-\
+5260d9f68d51"]
+},
+WindowSize->{1428., 825.75},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"802b2e5e-aecf-4c5c-9333-485602435c34"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 20, 188, 5, 98, "Title",ExpressionUUID->"7a28cb70-26a4-483d-8b1e-5260d9f68d51"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

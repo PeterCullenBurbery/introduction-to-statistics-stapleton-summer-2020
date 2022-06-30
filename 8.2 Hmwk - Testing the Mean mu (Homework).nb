@@ -10,21 +10,409 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       161,          7]
-NotebookDataLength[      1081,         39]
-NotebookOptionsPosition[       725,         25]
-NotebookOutlinePosition[      1133,         41]
-CellTagsIndexPosition[      1090,         38]
+NotebookDataLength[     18788,        500]
+NotebookOptionsPosition[     14204,        413]
+NotebookOutlinePosition[     14616,        429]
+CellTagsIndexPosition[     14573,        426]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
 Cell["8.2 Hmwk - Testing the Mean mu (Homework)", "Title",
  CellChangeTimes->{
   3.865594158681601*^9},ExpressionUUID->"df67da07-df97-42ba-8731-\
-f1518489625a"]
+f1518489625a"],
+
+Cell["\<\
+A random sample of 36 values is drawn from a mound-shaped and symmetric \
+distribution. The sample mean is 11 and the sample standard deviation is 2. \
+Use a level of significance of 0.05 to conduct a two-tailed test of the claim \
+that the population mean is 10.5.\
+\>", "Text",
+ CellChangeTimes->{{3.86559422387086*^9, 
+  3.8655942282388964`*^9}},ExpressionUUID->"17cb8039-c179-4960-ba25-\
+d2e6f3b6627e"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{"z", "=", 
+   FractionBox[
+    RowBox[{
+     OverscriptBox["x", "_"], "-", "\[Mu]"}], 
+    RowBox[{"\[Sigma]", "/", 
+     SqrtBox["n"]}]]}], 
+  TraditionalForm]],ExpressionUUID->"73abeb46-e82b-4668-bcd9-29aa318d0d33"]], \
+"Text",
+ CellChangeTimes->{{3.865592537966668*^9, 
+  3.8655925648553286`*^9}},ExpressionUUID->"96516f17-818e-4b67-8268-\
+629f3b42e19c"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "36"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xBar", "=", "11"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Alpha]", "=", "0.05"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Mu]", "=", "10.5"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.865594307147221*^9, 3.8655943611080465`*^9}, {
+   3.865594394276713*^9, 3.865594411794697*^9}, 3.865594560893603*^9},
+ CellLabel->"In[37]:=",ExpressionUUID->"83236029-674e-445b-a38d-28b3b8848920"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"xBar", "-", "\[Mu]"}], 
+  RowBox[{"s", "/", 
+   SqrtBox["n"]}]]], "Input",
+ CellChangeTimes->{
+  3.865594365378398*^9, {3.865594400274846*^9, 3.8655944276975894`*^9}, {
+   3.8655945641878057`*^9, 3.8655945668995857`*^9}},
+ CellLabel->"In[42]:=",ExpressionUUID->"b826b67f-3afe-4288-b4af-33e5cb0f8536"],
+
+Cell[BoxData["1.5`"], "Output",
+ CellChangeTimes->{3.865594427955403*^9, 3.8655945676807585`*^9},
+ CellLabel->"Out[42]=",ExpressionUUID->"6da1d22e-09d3-4a8d-85bc-98dff3eedf1c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"11", "-", "10.5"}], 
+  RowBox[{"2", "/", 
+   SqrtBox["36"]}]]], "Input",
+ CellChangeTimes->{{3.8655950052010603`*^9, 3.865595016993504*^9}},
+ CellLabel->"In[43]:=",ExpressionUUID->"eb3d4991-2ea2-4585-89e8-cd671959b7d3"],
+
+Cell[BoxData["1.5`"], "Output",
+ CellChangeTimes->{3.8655950174754086`*^9},
+ CellLabel->"Out[43]=",ExpressionUUID->"82b128ae-2283-46f8-b154-57ed1db00a52"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NProbability", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "<", 
+     RowBox[{"-", "1.5"}]}], "\[Or]", 
+    RowBox[{"x", ">", "1.5"}]}], ",", 
+   RowBox[{"x", "\[Distributed]", 
+    RowBox[{"NormalDistribution", "[", "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.865594442521904*^9, 3.865594491682848*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"fd3265a8-3d25-4ff1-ab2f-7b6230de4c7b"],
+
+Cell[BoxData["0.13361440256067258`"], "Output",
+ CellChangeTimes->{{3.8655944748900723`*^9, 3.8655944921096315`*^9}},
+ CellLabel->"Out[36]=",ExpressionUUID->"e5dc19c7-f533-46c6-8d20-95faa8919a61"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["8", "Section",
+ CellChangeTimes->{
+  3.865595203555232*^9},ExpressionUUID->"1d29c8a2-50fc-4d81-988d-\
+be7910643615"],
+
+Cell["\<\
+A random sample of 51 adult coyotes in a region of northern Minnesota showed \
+the average age to be x = 2.05 years, with sample standard deviation s = 0.86 \
+years. However, it is thought that the overall population mean age of coyotes \
+is \|01d707 = 1.75. Do the sample data indicate that coyotes in this region \
+of northern Minnesota tend to live longer than the average of 1.75 years? Use \
+\|01d6fc = 0.01.\
+\>", "Text",
+ CellChangeTimes->{
+  3.865595200813122*^9},ExpressionUUID->"c3f9067b-ce82-4520-9d7a-\
+157802b5760f"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "51"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xBar", "=", "2.05"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Mu]", "=", "1.75"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s", "=", "0.86"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Alpha]", "=", "0.01"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8655952096735506`*^9, 3.865595244546527*^9}, {
+  3.865595353606578*^9, 3.8655953726465445`*^9}},
+ CellLabel->"In[68]:=",ExpressionUUID->"efa17709-3e48-4bd9-a872-4f4a0ebf3574"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"xBar", "-", "\[Mu]"}], 
+  RowBox[{"s", "/", 
+   SqrtBox["n"]}]]], "Input",
+ CellChangeTimes->{{3.865595300092084*^9, 3.86559530500885*^9}},
+ CellLabel->"In[54]:=",ExpressionUUID->"383d4d03-29dd-48f4-aeac-30e81c27952d"],
+
+Cell[BoxData["2.491195963445179`"], "Output",
+ CellChangeTimes->{3.86559530564357*^9},
+ CellLabel->"Out[54]=",ExpressionUUID->"0d3ed64f-f4a1-4484-a59a-0b06172e1fe1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"degreesOfFreedom", "=", 
+  RowBox[{"n", "-", "1"}]}]], "Input",
+ CellLabel->"In[67]:=",ExpressionUUID->"856f6265-2c8e-4d40-9b5e-d147d49f9c50"],
+
+Cell[BoxData["50"], "Output",
+ CellChangeTimes->{3.8655953699463835`*^9},
+ CellLabel->"Out[67]=",ExpressionUUID->"be6ffbd4-d223-4fa4-a37f-486ba27a6243"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Arsenic in Ground Water", "Section",
+ CellChangeTimes->{{3.8655955021893673`*^9, 
+  3.8655955057413845`*^9}},ExpressionUUID->"16861da1-34a0-4ed3-9170-\
+07141a1c8d04"],
+
+Cell["\<\
+Unfortunately, arsenic occurs naturally in some ground water.\[Dagger] A mean \
+arsenic level of \|01d707 = 8.0 parts per billion (ppb) is considered safe \
+for agricultural use. A well in Texas is used to water cotton crops. This \
+well is tested on a regular basis for arsenic. A random sample of 31 tests \
+gave a sample mean of x = 6.7 ppb arsenic, with s = 2.8 ppb. Does this \
+information indicate that the mean level of arsenic in this well is less than \
+8 ppb? Use \|01d6fc = 0.01.\
+\>", "Text",
+ CellChangeTimes->{
+  3.8655955107298365`*^9},ExpressionUUID->"0b2b5387-7877-4962-86ab-\
+f6fd92ae7686"],
+
+Cell["The level of significance is \[Alpha]=0.01", "Text",
+ CellChangeTimes->{{3.8655955183240585`*^9, 
+  3.8655955303393326`*^9}},ExpressionUUID->"a593551c-ad7f-4b34-8499-\
+23a411297ae2"],
+
+Cell[TextData[{
+ "The null hypothesis is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["H", "0"], " ", ":", "\[Mu]"}], "=", 
+    RowBox[{"8", "ppb"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e920a632-6359-49a0-936a-a3a3a3c38587"],
+ " and the alternate hypothesis ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["H", "1"], " ", ";", 
+    RowBox[{"\[Mu]", "<", 
+     RowBox[{"8", "ppb"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d1a8bff4-6dd7-4910-a471-1c7efb2e118c"]
+}], "Text",
+ CellChangeTimes->{{3.865595558261326*^9, 
+  3.8655956053743005`*^9}},ExpressionUUID->"7722dd28-2142-4d7e-890a-\
+2b9fa07a2fcf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"6.7", "-", "8"}], 
+  FractionBox["2.8", 
+   SqrtBox["31"]]]], "Input",
+ CellChangeTimes->{{3.8655956211769505`*^9, 3.8655956327503724`*^9}},
+ CellLabel->"In[73]:=",ExpressionUUID->"d60d7c97-fc05-4337-a6ee-0f4b02be55ab"],
+
+Cell[BoxData[
+ RowBox[{"-", "2.5850334541710813`"}]], "Output",
+ CellChangeTimes->{3.8655956332737694`*^9},
+ CellLabel->"Out[73]=",ExpressionUUID->"caeb27d6-c295-4207-a5ec-1dd102af4b39"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Snow Avalanche Thicknesses", "Section",
+ CellChangeTimes->{{3.8655958973978605`*^9, 
+  3.865595904887357*^9}},ExpressionUUID->"3123bfee-3b27-4c96-84d2-\
+efd725ad74e0"],
+
+Cell["\<\
+Snow avalanches can be a real problem for travelers in the western United \
+States and Canada. A very common type of avalanche is called the slab \
+avalanche. These have been studied extensively by David McClung, a professor \
+of civil engineering at the University of British Columbia. Suppose slab \
+avalanches studied in a region of Canada had an average thickness of \|01d707 \
+= 64 cm. The ski patrol at Vail, Colorado, is studying slab avalanches in its \
+region. A random sample of avalanches in spring gave the following \
+thicknesses (in cm).\
+\>", "Text",
+ CellChangeTimes->{
+  3.865595911563562*^9},ExpressionUUID->"3278a2e7-ca0f-4cc3-8d0c-\
+1c33a57bfa66"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"avalancheThicknessData", "=", 
+   RowBox[{"Flatten", "@", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "59", ",", "51", ",", "76", ",", "38", ",", "65", ",", "54", ",", "49",
+         ",", "62"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "68", ",", "55", ",", "64", ",", "67", ",", "63", ",", "74", ",", "65",
+         ",", "79"}], "}"}]}], "}"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8655959166475945`*^9, 3.865595977839675*^9}},
+ CellLabel->"In[76]:=",ExpressionUUID->"4d848c67-2c79-49bc-8929-c448f4ea800d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Mean", "[", "avalancheThicknessData", "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.865595961800987*^9, 3.865595984270549*^9}},
+ CellLabel->"In[78]:=",ExpressionUUID->"1c49e4e8-a8b2-4e0a-9318-cdf6a1db08b1"],
+
+Cell[BoxData["61.8125`"], "Output",
+ CellChangeTimes->{3.8655959845644803`*^9},
+ CellLabel->"Out[78]=",ExpressionUUID->"26862b7e-8738-4752-97e0-f60a1de22402"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"StandardDeviation", "[", "avalancheThicknessData", "]"}], "//", 
+  "N"}]], "Input",
+ CellChangeTimes->{{3.86559599285183*^9, 3.8655959989511285`*^9}},
+ CellLabel->"In[79]:=",ExpressionUUID->"d65c3314-f342-49f7-a36b-9478ec07abb0"],
+
+Cell[BoxData["10.647182725960892`"], "Output",
+ CellChangeTimes->{3.8655959992651477`*^9},
+ CellLabel->"Out[79]=",ExpressionUUID->"79a8bcda-7b25-4634-b954-fe22a0e9ef19"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"Mean", "[", "avalancheThicknessData", "]"}], "-", "64"}], ")"}],
+    "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"StandardDeviation", "[", "avalancheThicknessData", "]"}], "/", 
+     SqrtBox[
+      RowBox[{"Length", "[", "avalancheThicknessData", "]"}]]}], ")"}]}], "//",
+   "N"}]], "Input",
+ CellChangeTimes->{{3.865596039854265*^9, 3.8655960770259376`*^9}},
+ CellLabel->"In[81]:=",ExpressionUUID->"fecf8f79-365f-40af-a1b4-e68755461f8d"],
+
+Cell[BoxData[
+ RowBox[{"-", "0.8218136407732521`"}]], "Output",
+ CellChangeTimes->{{3.8655960678047185`*^9, 3.8655960772651663`*^9}},
+ CellLabel->"Out[81]=",ExpressionUUID->"965d49e3-33fd-441c-8475-5764ae132c3b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Wave Height", "Section",
+ CellChangeTimes->{{3.8655961479527225`*^9, 
+  3.865596156312978*^9}},ExpressionUUID->"5a9ca51b-eac4-425a-9315-\
+fd4271ba70ff"],
+
+Cell["\<\
+Weatherwise is a magazine published by the American Meteorological Society. \
+One issue gives a rating system used to classify Nor\[CloseCurlyQuote]easter \
+storms that frequently hit New England and can cause much damage near the \
+ocean. A severe storm has an average peak wave height of \|01d707 = 16.4 feet \
+for waves hitting the shore. Suppose that a Nor\[CloseCurlyQuote]easter is in \
+progress at the severe storm class rating. Peak wave heights are usually \
+measured from land (using binoculars) off fixed cement piers. Suppose that a \
+reading of 35 waves showed an average wave height of 
+x = 17.5 feet. Previous studies of severe storms indicate that \|01d70e = 3.8 \
+feet. Does this information suggest that the storm is (perhaps temporarily) \
+increasing above the severe rating? Use \|01d6fc = 0.01. Solve the problem \
+using the critical region method of testing (i.e., traditional method). \
+(Round your answers to two decimal places.)\
+\>", "Text",
+ CellChangeTimes->{{3.8655961605745687`*^9, 
+  3.8655961634017515`*^9}},ExpressionUUID->"1431d5f3-b3b9-4e0b-a8dc-\
+0032a1f19d3b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "-", 
+  RowBox[{"0.01", "/", "2"}]}]], "Input",
+ CellChangeTimes->{{3.865596431856001*^9, 3.8655964353631477`*^9}},
+ CellLabel->"In[82]:=",ExpressionUUID->"3b5e0bc5-6517-498f-a12c-f75b50bd427d"],
+
+Cell[BoxData["0.995`"], "Output",
+ CellChangeTimes->{3.865596435694206*^9},
+ CellLabel->"Out[82]=",ExpressionUUID->"69c13e54-dcd8-4bbf-887f-dde70f484ea5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"16.4", "-", "17.5"}], 
+  RowBox[{"3.8", "/", 
+   SqrtBox["35"]}]]], "Input",
+ CellChangeTimes->{{3.8655965175337486`*^9, 3.865596540822502*^9}},
+ CellLabel->"In[84]:=",ExpressionUUID->"19181900-4833-4a44-9729-01d0497153af"],
+
+Cell[BoxData[
+ RowBox[{"-", "1.7125494108972596`"}]], "Output",
+ CellChangeTimes->{3.865596541437788*^9},
+ CellLabel->"Out[84]=",ExpressionUUID->"a7c2c1d4-2920-45df-b0a0-85ea3893f0e7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NProbability", "[", 
+  RowBox[{
+   RowBox[{"x", ">", 
+    RowBox[{"Abs", "[", 
+     FractionBox[
+      RowBox[{"16.4", "-", "17.5"}], 
+      RowBox[{"3.8", "/", 
+       SqrtBox["35"]}]], "]"}]}], ",", 
+   RowBox[{"x", "\[Distributed]", 
+    RowBox[{"NormalDistribution", "[", "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.865596544034239*^9, 3.8655965741512375`*^9}},
+ CellLabel->"In[85]:=",ExpressionUUID->"ee5ef9d9-dade-4d7c-bf25-8ed29b4dc069"],
+
+Cell[BoxData["0.04339773351543937`"], "Output",
+ CellChangeTimes->{3.8655965745799265`*^9},
+ CellLabel->"Out[85]=",ExpressionUUID->"e68bd1f3-fd29-444f-8891-b75b009c2c8d"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 },
 WindowSize->{569.25, 609.75},
-WindowMargins->{{429, Automatic}, {93, Automatic}},
+WindowMargins->{{Automatic, -5.25}, {Automatic, 88.5}},
 FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"10b23c9c-1ebb-4c3e-b60d-a95fb503e148"
@@ -40,10 +428,81 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[561, 20, 160, 3, 160, "Title",ExpressionUUID->"df67da07-df97-42ba-8731-f1518489625a"]
+Cell[CellGroupData[{
+Cell[583, 22, 160, 3, 160, "Title",ExpressionUUID->"df67da07-df97-42ba-8731-f1518489625a"],
+Cell[746, 27, 416, 8, 104, "Text",ExpressionUUID->"17cb8039-c179-4960-ba25-d2e6f3b6627e"],
+Cell[1165, 37, 405, 12, 46, "Text",ExpressionUUID->"96516f17-818e-4b67-8268-629f3b42e19c"],
+Cell[1573, 51, 582, 13, 105, "Input",ExpressionUUID->"83236029-674e-445b-a38d-28b3b8848920"],
+Cell[CellGroupData[{
+Cell[2180, 68, 339, 8, 57, "Input",ExpressionUUID->"b826b67f-3afe-4288-b4af-33e5cb0f8536"],
+Cell[2522, 78, 176, 2, 32, "Output",ExpressionUUID->"6da1d22e-09d3-4a8d-85bc-98dff3eedf1c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2735, 85, 258, 6, 57, "Input",ExpressionUUID->"eb3d4991-2ea2-4585-89e8-cd671959b7d3"],
+Cell[2996, 93, 154, 2, 32, "Output",ExpressionUUID->"82b128ae-2283-46f8-b154-57ed1db00a52"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3187, 100, 415, 10, 28, "Input",ExpressionUUID->"fd3265a8-3d25-4ff1-ab2f-7b6230de4c7b"],
+Cell[3605, 112, 196, 2, 32, "Output",ExpressionUUID->"e5dc19c7-f533-46c6-8d20-95faa8919a61"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3838, 119, 122, 3, 67, "Section",ExpressionUUID->"1d29c8a2-50fc-4d81-988d-be7910643615"],
+Cell[3963, 124, 539, 10, 150, "Text",ExpressionUUID->"c3f9067b-ce82-4520-9d7a-157802b5760f"],
+Cell[4505, 136, 566, 13, 105, "Input",ExpressionUUID->"efa17709-3e48-4bd9-a872-4f4a0ebf3574"],
+Cell[CellGroupData[{
+Cell[5096, 153, 257, 6, 57, "Input",ExpressionUUID->"383d4d03-29dd-48f4-aeac-30e81c27952d"],
+Cell[5356, 161, 165, 2, 32, "Output",ExpressionUUID->"0d3ed64f-f4a1-4484-a59a-0b06172e1fe1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5558, 168, 166, 3, 28, "Input",ExpressionUUID->"856f6265-2c8e-4d40-9b5e-d147d49f9c50"],
+Cell[5727, 173, 152, 2, 32, "Output",ExpressionUUID->"be6ffbd4-d223-4fa4-a37f-486ba27a6243"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5928, 181, 172, 3, 67, "Section",ExpressionUUID->"16861da1-34a0-4ed3-9170-07141a1c8d04"],
+Cell[6103, 186, 618, 11, 173, "Text",ExpressionUUID->"0b2b5387-7877-4962-86ab-f6fd92ae7686"],
+Cell[6724, 199, 188, 3, 35, "Text",ExpressionUUID->"a593551c-ad7f-4b34-8499-23a411297ae2"],
+Cell[6915, 204, 705, 22, 53, "Text",ExpressionUUID->"7722dd28-2142-4d7e-890a-2b9fa07a2fcf"],
+Cell[CellGroupData[{
+Cell[7645, 230, 258, 6, 57, "Input",ExpressionUUID->"d60d7c97-fc05-4337-a6ee-0f4b02be55ab"],
+Cell[7906, 238, 186, 3, 32, "Output",ExpressionUUID->"caeb27d6-c295-4207-a5ec-1dd102af4b39"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8141, 247, 173, 3, 67, "Section",ExpressionUUID->"3123bfee-3b27-4c96-84d2-efd725ad74e0"],
+Cell[8317, 252, 677, 12, 196, "Text",ExpressionUUID->"3278a2e7-ca0f-4cc3-8d0c-1c33a57bfa66"],
+Cell[8997, 266, 596, 15, 67, "Input",ExpressionUUID->"4d848c67-2c79-49bc-8929-c448f4ea800d"],
+Cell[CellGroupData[{
+Cell[9618, 285, 247, 4, 28, "Input",ExpressionUUID->"1c49e4e8-a8b2-4e0a-9318-cdf6a1db08b1"],
+Cell[9868, 291, 158, 2, 32, "Output",ExpressionUUID->"26862b7e-8738-4752-97e0-f60a1de22402"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10063, 298, 264, 5, 28, "Input",ExpressionUUID->"d65c3314-f342-49f7-a36b-9478ec07abb0"],
+Cell[10330, 305, 169, 2, 32, "Output",ExpressionUUID->"79a8bcda-7b25-4634-b954-fe22a0e9ef19"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10536, 312, 522, 14, 92, "Input",ExpressionUUID->"fecf8f79-365f-40af-a1b4-e68755461f8d"],
+Cell[11061, 328, 212, 3, 32, "Output",ExpressionUUID->"965d49e3-33fd-441c-8475-5764ae132c3b"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11322, 337, 158, 3, 67, "Section",ExpressionUUID->"5a9ca51b-eac4-425a-9315-fd4271ba70ff"],
+Cell[11483, 342, 1107, 17, 311, "Text",ExpressionUUID->"1431d5f3-b3b9-4e0b-a8dc-0032a1f19d3b"],
+Cell[CellGroupData[{
+Cell[12615, 363, 222, 4, 28, "Input",ExpressionUUID->"3b5e0bc5-6517-498f-a12c-f75b50bd427d"],
+Cell[12840, 369, 154, 2, 32, "Output",ExpressionUUID->"69c13e54-dcd8-4bbf-887f-dde70f484ea5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13031, 376, 262, 6, 57, "Input",ExpressionUUID->"19181900-4833-4a44-9729-01d0497153af"],
+Cell[13296, 384, 184, 3, 32, "Output",ExpressionUUID->"a7c2c1d4-2920-45df-b0a0-85ea3893f0e7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13517, 392, 474, 12, 57, "Input",ExpressionUUID->"ee5ef9d9-dade-4d7c-bf25-8ed29b4dc069"],
+Cell[13994, 406, 170, 2, 32, "Output",ExpressionUUID->"e68bd1f3-fd29-444f-8891-b75b009c2c8d"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
