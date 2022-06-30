@@ -1,0 +1,51 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      1107,         41]
+NotebookOptionsPosition[       756,         27]
+NotebookOutlinePosition[      1160,         43]
+CellTagsIndexPosition[      1117,         40]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+9.2 Hmwk - Linear Regression &amp; Coeffic of Deter (Homework)\
+\>", "Title",
+ CellChangeTimes->{
+  3.8656029895497494`*^9},ExpressionUUID->"bd9f658c-c429-4081-b21d-\
+c22ef6913052"]
+},
+WindowSize->{1428., 825.75},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"b457ab84-9f75-4421-b68a-bba182a2afbb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 20, 191, 5, 98, "Title",ExpressionUUID->"bd9f658c-c429-4081-b21d-c22ef6913052"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
