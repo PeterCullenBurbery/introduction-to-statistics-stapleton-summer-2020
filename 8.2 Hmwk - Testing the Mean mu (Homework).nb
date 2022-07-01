@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       161,          7]
-NotebookDataLength[     18788,        500]
-NotebookOptionsPosition[     14204,        413]
-NotebookOutlinePosition[     14616,        429]
-CellTagsIndexPosition[     14573,        426]
+NotebookDataLength[     24662,        664]
+NotebookOptionsPosition[     18391,        546]
+NotebookOutlinePosition[     18803,        562]
+CellTagsIndexPosition[     18760,        559]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -408,6 +408,139 @@ Cell[BoxData["0.04339773351543937`"], "Output",
  CellChangeTimes->{3.8655965745799265`*^9},
  CellLabel->"Out[85]=",ExpressionUUID->"e68bd1f3-fd29-444f-8891-b75b009c2c8d"]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Test", "Chapter",
+ CellChangeTimes->{{3.865607984332778*^9, 
+  3.86560798468533*^9}},ExpressionUUID->"08bc0e7c-e538-4d40-aaf5-\
+a105039ec628"],
+
+Cell[CellGroupData[{
+
+Cell[" Trout Lengths", "Section",
+ CellChangeTimes->{{3.865607995930588*^9, 
+  3.8656080016295843`*^9}},ExpressionUUID->"b2ee4a32-336f-4dc1-be2a-\
+960c964efe99"],
+
+Cell["\<\
+Pyramid Lake is on the Paiute Indian Reservation in Nevada. The lake is \
+famous for cutthroat trout. Suppose a friend tells you that the average \
+length of trout caught in Pyramid Lake is \|01d707 = 19 inches. However, a \
+survey reported that of a random sample of 46 fish caught, the mean length \
+was x = 18.4 inches, with estimated standard deviation s = 3.3 inches. Do \
+these data indicate that the average length of a trout caught in Pyramid Lake \
+is less than \|01d707 = 19 inches? Use \|01d6fc = 0.05.\
+\>", "Text",
+ CellChangeTimes->{
+  3.8656080045123143`*^9},ExpressionUUID->"a1838363-da72-4d89-b873-\
+1e574400b0bc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"19", "-", "18.4"}], 
+  RowBox[{"3.3", "/", 
+   SqrtBox["46"]}]]], "Input",
+ CellChangeTimes->{{3.8656080078120317`*^9, 3.865608021661154*^9}},
+ CellLabel->
+  "In[182]:=",ExpressionUUID->"5e173ca1-87d9-4f53-a02e-1d6152d67100"],
+
+Cell[BoxData["1.233150906022779`"], "Output",
+ CellChangeTimes->{3.865608022187524*^9},
+ CellLabel->
+  "Out[182]=",ExpressionUUID->"2691fa88-f975-4001-ab44-5bbc03d466b8"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Intoxicated Driver accidens", "Section",
+ CellChangeTimes->{{3.865608553770816*^9, 
+  3.865608557914139*^9}},ExpressionUUID->"a3531251-7662-47e7-aa27-\
+607a6ebcf93f"],
+
+Cell["\<\
+The U.S. Department of Transportation, National Highway Traffic Safety \
+Administration, reported that 77% of all fatally injured automobile drivers \
+were intoxicated. A random sample of 52 records of automobile driver \
+fatalities in a certain county showed that 35 involved an intoxicated driver. \
+Do these data indicate that the population proportion of driver fatalities \
+related to alcohol is less than 77% in Kit Carson County? Use \|01d6fc = 0.10.\
+\>", "Text",
+ CellChangeTimes->{
+  3.865608560652261*^9},ExpressionUUID->"8ba6e9ed-6e9f-49fc-899f-\
+9a153559a51a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"35.", "/", "52."}]], "Input",
+ CellChangeTimes->{{3.8656085663259025`*^9, 3.8656085712904043`*^9}},
+ CellLabel->
+  "In[183]:=",ExpressionUUID->"3ee6612c-e565-45e3-9e3b-7a075b7b2c0a"],
+
+Cell[BoxData["0.6730769230769231`"], "Output",
+ CellChangeTimes->{3.86560857160581*^9},
+ CellLabel->
+  "Out[183]=",ExpressionUUID->"e46b3899-28e3-4bff-b094-393854070e4f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"35.", "/", "52."}], ")"}], 
+  RowBox[{"(", "52", ")"}]}]], "Input",
+ CellChangeTimes->{{3.8656085760792074`*^9, 3.8656085820261545`*^9}},
+ CellLabel->
+  "In[184]:=",ExpressionUUID->"b4e210c4-603e-42a7-a8a0-c71e59404a44"],
+
+Cell[BoxData["35.`"], "Output",
+ CellChangeTimes->{3.865608582377695*^9},
+ CellLabel->
+  "Out[184]=",ExpressionUUID->"11c9193e-4b9f-476c-9202-4a36c9f7db28"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"1", "-", 
+    RowBox[{"35.", "/", "52."}]}], ")"}], 
+  RowBox[{"(", "52", ")"}]}]], "Input",
+ CellChangeTimes->{{3.8656085760792074`*^9, 3.8656085865132356`*^9}},
+ CellLabel->
+  "In[185]:=",ExpressionUUID->"ff4b12f3-2f7c-4f1f-83df-553122300dfb"],
+
+Cell[BoxData["16.999999999999996`"], "Output",
+ CellChangeTimes->{3.8656085867856593`*^9},
+ CellLabel->
+  "Out[185]=",ExpressionUUID->"5a351f08-fdb8-48ba-ab7c-a038f18da40e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"77", "-", 
+   RowBox[{"35.", "/", "52."}]}], 
+  RowBox[{"1", "/", 
+   SqrtBox["52"]}]]], "Input",
+ CellChangeTimes->{{3.8656099730690837`*^9, 3.865610005250612*^9}},
+ CellLabel->
+  "In[206]:=",ExpressionUUID->"9257a55d-63e0-4b83-b2fd-891b180ffead"],
+
+Cell[BoxData["550.4012697044836`"], "Output",
+ CellChangeTimes->{3.865610005737883*^9},
+ CellLabel->
+  "Out[206]=",ExpressionUUID->"ed9c22f4-d4b5-4325-8697-2c8e16d2f863"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
@@ -499,6 +632,37 @@ Cell[13296, 384, 184, 3, 32, "Output",ExpressionUUID->"a7c2c1d4-2920-45df-b0a0-8
 Cell[CellGroupData[{
 Cell[13517, 392, 474, 12, 57, "Input",ExpressionUUID->"ee5ef9d9-dade-4d7c-bf25-8ed29b4dc069"],
 Cell[13994, 406, 170, 2, 32, "Output",ExpressionUUID->"e68bd1f3-fd29-444f-8891-b75b009c2c8d"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14213, 414, 148, 3, 69, "Chapter",ExpressionUUID->"08bc0e7c-e538-4d40-aaf5-a105039ec628"],
+Cell[CellGroupData[{
+Cell[14386, 421, 161, 3, 67, "Section",ExpressionUUID->"b2ee4a32-336f-4dc1-be2a-960c964efe99"],
+Cell[14550, 426, 641, 11, 173, "Text",ExpressionUUID->"a1838363-da72-4d89-b873-1e574400b0bc"],
+Cell[CellGroupData[{
+Cell[15216, 441, 264, 7, 57, "Input",ExpressionUUID->"5e173ca1-87d9-4f53-a02e-1d6152d67100"],
+Cell[15483, 450, 170, 3, 32, "Output",ExpressionUUID->"2691fa88-f975-4001-ab44-5bbc03d466b8"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15702, 459, 172, 3, 67, "Section",ExpressionUUID->"a3531251-7662-47e7-aa27-607a6ebcf93f"],
+Cell[15877, 464, 583, 10, 173, "Text",ExpressionUUID->"8ba6e9ed-6e9f-49fc-899f-9a153559a51a"],
+Cell[CellGroupData[{
+Cell[16485, 478, 206, 4, 28, "Input",ExpressionUUID->"3ee6612c-e565-45e3-9e3b-7a075b7b2c0a"],
+Cell[16694, 484, 170, 3, 32, "Output",ExpressionUUID->"e46b3899-28e3-4bff-b094-393854070e4f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16901, 492, 272, 7, 28, "Input",ExpressionUUID->"b4e210c4-603e-42a7-a8a0-c71e59404a44"],
+Cell[17176, 501, 156, 3, 32, "Output",ExpressionUUID->"11c9193e-4b9f-476c-9202-4a36c9f7db28"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17369, 509, 297, 8, 28, "Input",ExpressionUUID->"ff4b12f3-2f7c-4f1f-83df-553122300dfb"],
+Cell[17669, 519, 173, 3, 32, "Output",ExpressionUUID->"5a351f08-fdb8-48ba-ab7c-a038f18da40e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17879, 527, 287, 8, 57, "Input",ExpressionUUID->"9257a55d-63e0-4b83-b2fd-891b180ffead"],
+Cell[18169, 537, 170, 3, 32, "Output",ExpressionUUID->"ed9c22f4-d4b5-4325-8697-2c8e16d2f863"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
