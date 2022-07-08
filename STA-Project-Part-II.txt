@@ -1,0 +1,178 @@
+﻿STA Project – Part II
+
+    1. Using the graph from STA 225 Project Part I.  Copy and paste it below.  Use a straight edge to approximate a line of best fit to the data.  See page 553 in our textbook for info. 
+
+
+
+
+
+
+
+
+
+
+
+    2. On a scale of 0 to 1, estimate how well you feel the line fits the data.  Use the scale, 0 = no fit and 1 = a perfect fit.  Discuss how you arrived at your estimation and what factors or reasons made you choose the value? 
+
+
+
+
+
+
+
+    3. Find the equation based on your best fit line.  HINT:  To find the estimated equation, pick two points on (or closest to the line).
+
+a.  The two points chosen are: ( _______, _______ ) and ( _______, _______ )
+
+b.  Calculate the slope between the two points.  
+
+
+
+
+
+c.  Plug the points into the point-slope formula and solve your equation for y.  If you need assistance with this, I’ve included the links to two Khan Academy videos into the folder.  Indicate the equation below.   
+
+
+
+
+    4. Now, let’s calculate the least-squares line based on your data.  Remember, the data uses the ten cities from Part I (Miami, San Diego, NYC, Chicago, Seattle, SLC, Boston, Honolulu, Denver, and the city you chose from your initial discussion board posting. 
+
+Use this chart below or replicate the chart in Excel.  If you use Excel, you must attach the file when you submit the assignment.  You are being graded on mastering this process, which includes using the formulas as presented in our book with your data.  Do not use Excel functions, other than Sum.  Use Guided Example 4 (p. 555) as a guide.  
+x
+y
+x2
+xy 
+y2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+It is important that you show your work for parts a – e.
+
+    a. 
+
+
+    b. 
+
+
+    c. 
+
+
+
+    d. 
+
+
+    e. 
+
+
+    5. Show your work of how you will determine the Sample Correlation Coefficient, .  Hint:  Use Guided Exercise 3 (p. 542) as a guide.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    6. Compare your estimate of r from Step 2 to the value of  that you calculated in Step 5.  Was your estimation close?  Why are they not the same?
+
+
+
+
+
+
+
+
+    7. Now, you would like to choose one additional city, not previously used.  Use the internet to find the distance, flight info, and amount.  Remember, you can’t choose:  Miami, San Diego, New York City, Chicago, Seattle, Salt Lake City, Boston, Honolulu, Denver, or your chosen city picked on the discussion board.    
+
+
+
+
+
+
+
+
+
+
+
+
+    8. Plug the Distance into the equation found in Step 4e.  Determine .  Show your work.
+
+
+
+
+
+
+
+    9. Was the value of that you found in Step 8 similar to the Amount listed in the table on Step 7?  Why or Why not?
+
+
+
+Self-Check:
+    •  Have you shown your work for questions:  3, 4a – 4e, 5, and 8?  
+    • Have you given a well-thought-out answer for questions: 2, 6, and 9?
+    • Submit the: 
+        ◦ STA 225 Project Part II Word document
+        ◦ Scatterplot with best-fit line
+        ◦ Any calculations that you did by hand
+        ◦ Any Excel worksheets which show you using the formulas as found in 9.1 and 9.2.

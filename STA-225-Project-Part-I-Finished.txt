@@ -1,0 +1,80 @@
+STA 225 - Project 
+
+Summer is in full swing and it's time to make your vacation plans! You will be creating a model for predicting costs of airline ticket prices.  You will use the Internet to explore travel prices to various cities that I've preselected.  By the end of the project, you will add to this list with two cities that you have chosen yourself.  
+
+To begin, you'll need to indicate your city of departure, which is where you are flying out of.  This can be the airport closest to where you currently live or one from a nearby larger city.  For example, usually I fly out of the Huntington, WV airport.  But I have flown out of the Columbus, OH airport to get a good deal on airfare.
+Next, identify the dates that you will be leaving and returning.  Pick any week in August of this year.  For consistency, pick your leaving day and arriving day the same, for example, Saturday to Saturday, Sunday to Sunday, etc.  
+
+City of Departure:Columbus, OhioDate of Departure:Thursday August 18 2022Date of Return:Thursday August 25 2022
+
+
+1. Use the Internet to search for the lowest roundtrip airfares from your City of Departure to the Destinations listed below.  
+? Pick an airline that flies out of your departing airport, example:  American, Southwest, Delta, etc.  Indicate the cost of one roundtrip ticket.
+? A maximum of two stops in route is allowed.  List all flight numbers. 
+? You do not need to indicate the return flight number(s).
+? For the Distance column, use Google and search for the distance between your departing city and the destination.  Example.  "Distance between Huntington, WV and Miami, FL".  Round up to the nearest whole mile.  Example 45.8 would round to 46 miles.
+? In the Amount column, round the roundtrip airfare up to the nearest dollar.
+? In the blank row with the asterisk, go back to the Let's Get To Know Each Other Discussion Group from Week 1 and fill out the information to get to the city that you chose to visit.  
+DestinationDeparting Flight Numbers
+(Example: AA1234, AA357)Distance (Round to Nearest Mile)Amount of Roundtrip Ticket (Round to nearest dollar)Miami
+NK 445599$230San Diego
+DL 2617, DL 23871872$651New York CityUS 4799
+727$221ChicagoUA 4657
+571$279Seattle
+AS 9922176$722Salt Lake City
+AA 1969, AA 20651576$768BostonAA 3345 ,AA 2145
+928$221HonoluluUA 1097, UA 1736, HA 375
+4493$970DenverUA 1097
+1194$529Boulder Colorado through Denver International AirportUA 1097
+1227$529
+
+List the web site(s) that you used for your search:  
+
+Airfares: 	 	_________Google Flights___________________________________________________
+Distances:		_____________________Wolfram Mathematica_______________________________________
+
+
+
+2. In the space below, make a scatter plot of the distance versus cost.  Use the distance as the independent variable on the horizontal axis and amount as the dependent variable on the vertical axis.  Make appropriate scales for the axes.  Example, if it was 997 miles to Miami from your departing city and the roundtrip flight cost $267.  You would plot the point (997, 267).  Label each axis.
+
+
+
+
+
+
+
+
+3. Look at the scatterplot above to answer the following: How is the cost of the trip associated with the distance of the trip?
+
+
+
+
+
+I calculated the line of best fit with Wolfram Mathematica to be 208.07 + 0.197823 miles.
+
+This means every mile costs approximately 19 cents to fly in U.S dollars.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Self-Check:
+? Did you use the city chosen in Let's Get to Know Each Other discussion group from Week 1?
+? Did you draw a scatterplot?
+? Did you give a well-thought-out response for question 4?
+
