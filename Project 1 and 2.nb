@@ -1,0 +1,226 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7782,        218]
+NotebookOptionsPosition[      6044,        177]
+NotebookOutlinePosition[      6481,        194]
+CellTagsIndexPosition[      6438,        191]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Part 1 Project", "Section",
+ CellChangeTimes->{{3.866271453394478*^9, 
+  3.866271459679491*^9}},ExpressionUUID->"f95d3fc8-0c1e-41fe-82a5-\
+3cf852e894de"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cities", "=", 
+  RowBox[{"<|", 
+   RowBox[{
+    RowBox[{"\"\<Miami\>\"", "->", "230"}], ",", 
+    RowBox[{"\"\<SanDiego\>\"", "->", "651"}]}], "|>"}]}]], "Input",
+ CellChangeTimes->{{3.8662714684828606`*^9, 3.866271471489439*^9}, {
+  3.86627155452066*^9, 3.8662715766056547`*^9}, {3.866271618845846*^9, 
+  3.866271633051937*^9}, {3.8662722779024167`*^9, 3.8662722838534374`*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"22a6521c-2e37-4f56-a481-62c5d5c4b6a9"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Miami\"\>", "\[Rule]", "230"}], ",", 
+   RowBox[{"\<\"SanDiego\"\>", "\[Rule]", "651"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.8662716343009486`*^9, 3.8662722843204346`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"79248111-3087-4b9a-bb95-caa63cc92c46"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"KeyMap", "[", 
+  RowBox[{"WikidataGeoPosition", ",", "cities"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8662716553021784`*^9, 3.866271688133387*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"fd6a7513-24ed-4fd0-8e79-d2a8434d0b0d"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"25.783333333333`", ",", 
+      RowBox[{"-", "80.216666666667`"}]}], "}"}], "]"}], "\[Rule]", "230"}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.8662716615531917`*^9, 3.866271695245397*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"79b2a72b-9f1d-4c53-ac0e-082e9c59d1cd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"f", "/@", "cities"}]], "Input",
+ CellChangeTimes->{{3.866272142285193*^9, 3.866272143779183*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"d0be347d-8677-4b7b-876c-cae9e19d3021"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{"\<\"Miami\"\>", "\[Rule]", 
+   RowBox[{"f", "[", "230", "]"}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.866272144263185*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"be486ebb-8db3-4345-94dd-5e5089dbe491"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"KeyValueMap", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"<|", 
+     RowBox[{"\"\<Position\>\"", "->", 
+      RowBox[{"WikidataGeoPosition", "[", "#1", "]"}]}], "|>"}], "&"}], ",", 
+   "cities"}], "]"}]], "Input",
+ CellChangeTimes->{{3.866272149625763*^9, 3.866272189047312*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"ceee9b3c-93b5-4e36-a889-01a12c9f7ddf"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\[LeftAssociation]", 
+   RowBox[{"\<\"Position\"\>", "\[Rule]", 
+    RowBox[{"GeoPosition", "[", 
+     RowBox[{"{", 
+      RowBox[{"25.783333333333`", ",", 
+       RowBox[{"-", "80.216666666667`"}]}], "}"}], "]"}]}], 
+   "\[RightAssociation]"}], "}"}]], "Output",
+ CellChangeTimes->{3.8662721904613204`*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"2bfe60f7-310a-4ce1-a74b-d6bc2283a027"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"<|", 
+    RowBox[{
+     RowBox[{"\"\<Position\>\"", "->", 
+      RowBox[{"WikidataGeoPosition", "[", 
+       RowBox[{"First", "[", "#", "]"}], "]"}]}], ",", 
+     RowBox[{"\"\<Round-tripTicket\>\"", "->", 
+      RowBox[{"Last", "[", "#", "]"}]}]}], "|>"}], "&"}], "[", 
+  RowBox[{"\"\<Miami\>\"", "->", "230"}], "]"}]], "Input",
+ CellChangeTimes->{{3.866272763140283*^9, 3.866272826010611*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"4ff201ea-52c6-46e7-a11e-50d81da54655"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Position\"\>", "\[Rule]", 
+    RowBox[{"GeoPosition", "[", 
+     RowBox[{"{", 
+      RowBox[{"25.783333333333`", ",", 
+       RowBox[{"-", "80.216666666667`"}]}], "}"}], "]"}]}], ",", 
+   RowBox[{"\<\"Round-tripTicket\"\>", "\[Rule]", "230"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.8662727918078365`*^9, 3.8662728269785933`*^9}},
+ CellLabel->"Out[12]=",ExpressionUUID->"31ae0196-59cb-48ff-a897-b44bb6483417"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"<|", 
+    RowBox[{
+     RowBox[{"\"\<Position\>\"", "->", 
+      RowBox[{"WikidataGeoPosition", "[", "#1", "]"}]}], ",", 
+     RowBox[{"\"\<Round-tripTicket\>\"", "->", "#"}]}], "|>"}], "&"}], "/@", 
+  "cities"}]], "Input",
+ CellChangeTimes->{{3.866272763140283*^9, 3.8662728478745265`*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"178e0595-b7e0-455d-ad20-5ceee807a453"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Miami\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Position\"\>", "\[Rule]", 
+       RowBox[{"WikidataGeoPosition", "[", "230", "]"}]}], ",", 
+      RowBox[{"\<\"Round-tripTicket\"\>", "\[Rule]", "230"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"SanDiego\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Position\"\>", "\[Rule]", 
+       RowBox[{"WikidataGeoPosition", "[", "651", "]"}]}], ",", 
+      RowBox[{"\<\"Round-tripTicket\"\>", "\[Rule]", "651"}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.86627283570498*^9, 3.866272849284556*^9}},
+ CellLabel->"Out[15]=",ExpressionUUID->"1eadfcb1-bd4f-4dae-addc-787d7438a2d8"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1152., 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"cc74728b-4c0e-4d0d-940e-bc78c48b6cb6"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 159, 3, 67, "Section",ExpressionUUID->"f95d3fc8-0c1e-41fe-82a5-3cf852e894de"],
+Cell[CellGroupData[{
+Cell[764, 29, 481, 9, 28, "Input",ExpressionUUID->"22a6521c-2e37-4f56-a481-62c5d5c4b6a9"],
+Cell[1248, 40, 348, 7, 32, "Output",ExpressionUUID->"79248111-3087-4b9a-bb95-caa63cc92c46"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1633, 52, 251, 4, 28, "Input",ExpressionUUID->"fd6a7513-24ed-4fd0-8e79-d2a8434d0b0d"],
+Cell[1887, 58, 405, 9, 32, "Output",ExpressionUUID->"79b2a72b-9f1d-4c53-ac0e-082e9c59d1cd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2329, 72, 199, 3, 28, "Input",ExpressionUUID->"d0be347d-8677-4b7b-876c-cae9e19d3021"],
+Cell[2531, 77, 277, 5, 32, "Output",ExpressionUUID->"be486ebb-8db3-4345-94dd-5e5089dbe491"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2845, 87, 379, 9, 28, "Input",ExpressionUUID->"ceee9b3c-93b5-4e36-a889-01a12c9f7ddf"],
+Cell[3227, 98, 425, 10, 32, "Output",ExpressionUUID->"2bfe60f7-310a-4ce1-a74b-d6bc2283a027"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3689, 113, 520, 12, 28, "Input",ExpressionUUID->"4ff201ea-52c6-46e7-a11e-50d81da54655"],
+Cell[4212, 127, 506, 11, 32, "Output",ExpressionUUID->"31ae0196-59cb-48ff-a897-b44bb6483417"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4755, 143, 417, 10, 28, "Input",ExpressionUUID->"178e0595-b7e0-455d-ad20-5ceee807a453"],
+Cell[5175, 155, 841, 18, 52, "Output",ExpressionUUID->"1eadfcb1-bd4f-4dae-addc-787d7438a2d8"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

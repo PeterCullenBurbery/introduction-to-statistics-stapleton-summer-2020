@@ -3113,8 +3113,8 @@ Summer I\\\\scatterplot of flight distance in miles and cost on August 18 \
   "In[124]:=",ExpressionUUID->"0e508775-cbda-4a7a-947a-c57beb8ec923"]
 }, Open  ]]
 },
-WindowSize->{1141.2, 604.8},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{1141.2, 567.6},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
 FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"f11f450f-5053-4691-8d01-9942cc358560"
